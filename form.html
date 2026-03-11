@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Form Validation</title>
+
+    <link rel="stylesheet" href="./css/output.css" />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  </head>
+
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-6">Create Project</h2>
+
+      <form id="projectForm" novalidate>
+        <!-- Project Title -->
+        <div class="mb-8 relative">
+          <label class="block text-sm font-medium text-gray-700 mb-1">
+            Project Title <span class="text-red-500">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="projectTitle"
+            placeholder="Enter Project Title"
+            autocomplete="off"
+            class="p-3 w-full rounded-lg border border-gray-300 focus:outline-none text-gray-500"
+          />
+
+          <!-- Absolute Error -->
+          <span
+            id="projectTitleError"
+            class="absolute left-0 -bottom-5 text-red-500 text-xs"
+          ></span>
+        </div>
+
+        <!-- Project Code -->
+        <div class="mb-8 relative">
+          <label class="block text-sm font-medium text-gray-700 mb-1">
+            Project Code <span class="text-red-500">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="projectCode"
+            placeholder="Enter Project Code"
+            autocomplete="off"
+            class="p-3 w-full rounded-lg border border-gray-300 focus:outline-none text-gray-500"
+          />
+
+          <!-- Absolute Error -->
+          <span
+            id="projectCodeError"
+            class="text-red-500 text-xs absolute left-0 -bottom-5"
+          ></span>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <script src="./js/index.js"></script>
+
+    <!-- <script>
+      $("#projectForm").validate({
+        rules: {
+          projectTitle: {
+            required: true,
+            minlength: 3,
+          },
+          projectCode: {
+            required: true,
+            minlength: 2,
+          },
+        },
+
+        messages: {
+          projectTitle: {
+            required: "Project Title is required",
+            minlength: "Minimum 3 characters required",
+          },
+          projectCode: {
+            required: "Project Code is required",
+            minlength: "Minimum 2 characters required",
+          },
+        },
+
+        // highlight: function (element) {
+        //   $(element).css("border", "2px solid red");
+        // },
+
+        unhighlight: function (element) {
+          $(element).css("border", "2px solid green");
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") === "projectTitle") {
+            $("#projectTitleError").html(error);
+          } else if (element.attr("name") === "projectCode") {
+            $("#projectCodeError").html(error);
+          }
+        },
+
+        submitHandler: function (form) {
+          alert("Project Form Submitted ✅");
+          form.submit();
+        },
+      });
+    </script> -->
+
+    <!-- <script>
+      $(document).ready(function () {
+        $("#projectForm").validate({
+          rules: {
+            projectTitle: { required: true, minlength: 3 },
+            projectCode: { required: true, minlength: 2 },
+          },
+
+          messages: {
+            projectTitle: {
+              required: "Project Title is required",
+              minlength: "Minimum 3 characters required",
+            },
+            projectCode: {
+              required: "Project Code is required",
+              minlength: "Minimum 2 characters required",
+            },
+          },
+
+          highlight: function (element) {
+            $(element)
+              .addClass("border-red-500")
+              .removeClass("border-gray-300 border-green-500");
+          },
+
+          unhighlight: function (element) {
+            $(element)
+              .addClass("border-green-500")
+              .removeClass("border-red-500");
+          },
+
+          errorPlacement: function (error, element) {
+            if (element.attr("name") === "projectTitle") {
+              $("#projectTitleError").html(error);
+            } else if (element.attr("name") === "projectCode") {
+              $("#projectCodeError").html(error);
+            }
+          },
+
+          submitHandler: function (form) {
+            alert("Project Form Submitted Successfully ✅");
+            return false;
+          },
+        });
+      });
+    </script> -->
+  </body>
+</html>

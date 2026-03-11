@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Role Confirmation</title>
+    <link rel="stylesheet" href="../css/output.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-black/60 z-40"></div>
+
+    <!-- Modal -->
+    <div
+      class="relative z-50 w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden"
+    >
+      <!-- Header -->
+      <div class="px-6 py-5 flex items-center justify-between shadow-md">
+        <div class="flex items-center gap-3">
+          <!-- Icon -->
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.5 0C27.165 0 35 7.835 35 17.5C35 27.165 27.165 35 17.5 35C7.835 35 0 27.165 0 17.5C0 7.835 7.835 0 17.5 0Z"
+              fill="#FEE2E2"
+            />
+            <path
+              d="M17.5 0C27.165 0 35 7.835 35 17.5C35 27.165 27.165 35 17.5 35C7.835 35 0 27.165 0 17.5C0 7.835 7.835 0 27.165 0Z"
+              stroke="#E5E7EB"
+            />
+            <path
+              d="M24.794 27.706H10.211V7.289H24.794V27.706Z"
+              stroke="#E5E7EB"
+            />
+            <g clip-path="url(#clip0_120_63753)">
+              <path
+                d="M17.502 10.758C17.906 10.758 18.279 10.971 18.484 11.322L24.637 21.804C24.845 22.157 24.845 22.593 24.642 22.946C24.44 23.299 24.061 23.518 23.654 23.518H11.349C10.942 23.518 10.563 23.299 10.361 22.946C10.159 22.593 10.162 22.154 10.366 21.804L16.519 11.322C16.724 10.971 17.097 10.758 17.502 10.758ZM17.502 14.404C17.123 14.404 16.818 14.708 16.818 15.087V18.277C16.818 18.656 17.123 18.961 17.502 18.961C17.88 18.961 18.185 18.656 18.185 18.277V15.087C18.185 14.708 17.88 14.404 17.502 14.404ZM18.413 20.784C18.413 20.542 18.317 20.31 18.146 20.139C17.975 19.968 17.743 19.872 17.502 19.872C17.26 19.872 17.028 19.968 16.857 20.139C16.686 20.31 16.59 20.542 16.59 20.784C16.59 21.025 16.686 21.257 16.857 21.428C17.028 21.599 17.26 21.695 17.502 21.695C17.743 21.695 17.975 21.599 18.146 21.428C18.317 21.257 18.413 21.025 18.413 20.784Z"
+                fill="#EF4444"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_120_63753">
+                <path
+                  d="M10.211 9.844H24.794V24.427H10.211V9.844Z"
+                  fill="white"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <h2 class="text-xl font-semibold">Delete Role</h2>
+        </div>
+
+        <!-- Close Button -->
+        <button
+          class="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.1357 2.13574C12.624 1.64746 12.624 0.854492 12.1357 0.366211C11.6475 -0.12207 10.8545 -0.12207 10.3662 0.366211L6.25293 4.4834L2.13574 0.370117C1.64746 -0.118164 0.854492 -0.118164 0.366211 0.370117C-0.12207 0.858398 -0.12207 1.65137 0.366211 2.13965L4.4834 6.25293L0.370117 10.3701C-0.118164 10.8584 -0.118164 11.6514 0.370117 12.1396C0.858399 12.6279 1.65137 12.6279 2.13965 12.1396L6.25293 8.02246L10.3701 12.1357C10.8584 12.624 11.6514 12.624 12.1396 12.1357C12.6279 11.6475 12.6279 10.8545 12.1396 10.3662L8.02246 6.25293L12.1357 2.13574Z"
+              fill="#9CA3AF"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="px-6 py-4">
+        <p class="mb-4 text-gray-500 leading-relaxed">
+          Are you sure you want to delete this role? This action will
+          permanently remove the role and unassign it from all users.
+        </p>
+
+        <div class="p-5 mb-4 bg-gray-50 border border-gray-300 rounded-lg">
+          <h3 class="mb-1 text-sm font-medium text-gray-500">
+            Role: <span class="font-semibold text-gray-800">Sales Manager</span>
+          </h3>
+        </div>
+
+        <div
+          class="flex items-start gap-4 p-4 mb-4 bg-amber-50 border border-amber-200 rounded-lg"
+        >
+          <!-- SVG Icon -->
+          <svg
+            width="16"
+            height="14"
+            viewBox="0 0 16 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0 mt-1"
+          >
+            <path
+              d="M7.99885 0C8.4426 0 8.85197 0.234375 9.07697 0.61875L15.827 12.1187C16.0551 12.5062 16.0551 12.9844 15.8332 13.3719C15.6113 13.7594 15.1957 14 14.7488 14H1.24885C0.801972 14 0.386347 13.7594 0.164472 13.3719C-0.0574034 12.9844 -0.0542784 12.5031 0.170722 12.1187L6.92072 0.61875C7.14572 0.234375 7.5551 0 7.99885 0ZM7.99885 4C7.58322 4 7.24885 4.33437 7.24885 4.75V8.25C7.24885 8.66562 7.58322 9 7.99885 9C8.41447 9 8.74885 8.66562 8.74885 8.25V4.75C8.74885 4.33437 8.41447 4 7.99885 4ZM8.99885 11C8.99885 10.7348 8.89349 10.4804 8.70595 10.2929C8.51842 10.1054 8.26406 10 7.99885 10C7.73363 10 7.47928 10.1054 7.29174 10.2929C7.1042 10.4804 6.99885 10.7348 6.99885 11C6.99885 11.2652 7.1042 11.5196 7.29174 11.7071C7.47928 11.8946 7.73363 12 7.99885 12C8.26406 12 8.51842 11.8946 8.70595 11.7071C8.89349 11.5196 8.99885 11.2652 8.99885 11Z"
+              fill="#EF4444"
+            />
+          </svg>
+
+          <!-- Text Content -->
+          <div class="flex flex-col gap-1">
+            <p class="text-sm font-semibold text-red-500">Cannot Delete Role</p>
+            <p class="text-sm text-red-400">
+              This role is currently assigned to <strong>14 users</strong>. You
+              must reassign them before deleting.
+            </p>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <label class="flex items-center gap-3 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            class="w-5 h-5 rounded border-gray-300 text-red-600"
+          />
+          <span class="text-sm text-gray-700"
+            >I understand this action cannot be undone</span
+          >
+        </label>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-6 py-3 flex items-center gap-3">
+        <button
+          class="px-6 py-3 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-700 focus:outline-none flex items-center gap-2 cursor-pointer"
+          disabled
+        >
+          <svg
+            width="12"
+            height="15"
+            viewBox="0 0 12 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.833 13.333C0.833 14.25 1.583 15 2.5 15H9.167C10.083 15 10.833 14.25 10.833 13.333V3.333H0.833V13.333ZM11.667 0.833H8.75L7.917 0H3.75L2.917 0.833H0V2.5H11.667V0.833Z"
+              fill="white"
+            />
+          </svg>
+          Delete Role
+        </button>
+
+        <button
+          class="px-5 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

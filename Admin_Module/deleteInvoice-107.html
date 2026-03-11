@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Invoice</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+
+  <body class="bg-gray-200 flex items-center justify-center min-h-screen">
+    <div class="max-w-xl bg-white rounded-xl shadow-lg">
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between px-6 py-4 border-b border-gray-200"
+      >
+        <div class="flex items-center gap-3">
+          <!-- Icon -->
+          <div class="w-8 h-8 flex items-center justify-center">
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="28" cy="28" r="28" fill="#FEE2E2" />
+              <path
+                d="M28 16.5C28.664 16.5 29.278 16.852 29.616 17.428L39.741 34.678C40.083 35.26 40.083 35.977 39.75 36.558C39.418 37.139 38.794 37.5 38.123 37.5H17.873C17.203 37.5 16.58 37.139 16.247 36.558C15.914 35.977 15.918 35.255 16.256 34.678L26.381 17.428C26.719 16.852 27.333 16.5 28 16.5ZM28 22.5C27.375 22.5 26.873 23.002 26.873 23.625V28.875C26.873 29.498 27.375 30 28 30C28.624 30 29.125 29.498 29.125 28.875V23.625C29.125 23.002 28.624 22.5 28 22.5ZM29.498 33C29.498 32.602 29.34 32.221 29.059 31.939C28.777 31.658 28.396 31.5 28 31.5C27.602 31.5 27.221 31.658 26.939 31.939C26.656 32.221 26.498 32.602 26.498 33C26.498 33.398 26.656 33.779 26.939 34.061C27.221 34.342 27.602 34.5 28 34.5C28.398 34.5 28.779 34.342 29.059 34.061C29.34 33.779 29.498 33.398 29.498 33Z"
+                fill="#EF4444"
+              />
+            </svg>
+          </div>
+          <!-- Title -->
+          <div>
+            <h2 class="font-semibold text-gray-800">Delete Invoice</h2>
+            <p class="text-xs text-gray-500">
+              This action requires confirmation
+            </p>
+          </div>
+        </div>
+
+        <!-- Close Button -->
+        <button id="closeBtn" class="text-gray-400 hover:text-gray-600">
+          <svg
+            class="w-3 h-3"
+            viewBox="0 0 13 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.136 2.136C12.624 1.647 12.624 0.854 12.136 0.366C11.648 -0.122 10.855 -0.122 10.366 0.366L6.253 4.484 2.136 0.37C1.648 -0.118 0.855 -0.118 0.366 0.37C-0.122 0.858 -0.122 1.651 0.366 2.14L4.484 6.253 0.37 10.37C-0.118 10.858 -0.118 11.651 0.37 12.14C0.858 12.628 1.651 12.628 2.14 12.14L6.253 8.023 10.37 12.136C10.858 12.624 11.651 12.624 12.14 12.136C12.628 11.648 12.628 10.855 12.14 10.366L8.023 6.253 12.136 2.136Z"
+              fill="#9CA3AF"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Content -->
+      <div class="px-6 py-5">
+        <p class="text-sm text-gray-500">
+          Are you sure you want to delete this invoice? This will permanently
+          remove the invoice record and cannot be undone.
+        </p>
+
+        <!-- Invoice Box -->
+        <div
+          class="p-4 mt-4 border border-gray-200 bg-gray-50 rounded-lg text-sm"
+        >
+          <div class="flex justify-between">
+            <span class="text-gray-500">Invoice:</span
+            ><span class="font-semibold text-gray-800">INV-20341</span>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-gray-500">Customer:</span
+            ><span class="font-semibold text-gray-800">ABC Corporation</span>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-gray-500">Amount:</span
+            ><span class="font-semibold text-gray-800">PKR 45,000</span>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div
+          class="flex gap-3 p-4 mt-4 bg-yellow-50 border-l-4 border-l-orange-400"
+        >
+          <div
+            class="flex items-center justify-center w-5 h-5 bg-orange-100 rounded-full"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18C11.387 18 13.676 17.052 15.364 15.364C17.052 13.676 18 11.387 18 9C18 6.613 17.052 4.324 15.364 2.636C13.676 0.948 11.387 0 9 0C6.613 0 4.324 0.948 2.636 2.636C0.948 4.324 0 6.613 0 9C0 11.387 0.948 13.676 2.636 15.364C4.324 17.052 6.613 18 9 18ZM9 4.5C9.468 4.5 9.844 4.876 9.844 5.344V9.281C9.844 9.749 9.468 10.125 9 10.125C8.532 10.125 8.156 9.749 8.156 9.281V5.344C8.156 4.876 8.532 4.5 9 4.5ZM7.875 12.375C7.875 12.077 7.994 11.791 8.205 11.579C8.416 11.368 8.702 11.25 9 11.25C9.298 11.25 9.585 11.368 9.796 11.579C10.006 11.791 10.125 12.077 10.125 12.375C10.125 12.673 10.006 12.959 9.796 13.171C9.585 13.382 9.298 13.5 9 13.5C8.702 13.5 8.416 13.382 8.205 13.171C7.994 12.959 7.875 12.673 7.875 12.375Z"
+                fill="#FDBA74"
+              />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-orange-300">
+              Payment Status Warning
+            </p>
+            <p class="text-sm text-orange-300">
+              This invoice has already been paid. Deleting it will affect
+              financial records and reports.
+            </p>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div
+          class="flex items-start gap-2 p-3 mt-4 border border-gray-200 bg-gray-50 rounded-lg"
+        >
+          <input id="invoiceCheckbox" type="checkbox" class="mt-1" />
+          <p class="text-sm text-gray-500">
+            I understand this action cannot be undone and will permanently
+            delete this invoice from the system
+          </p>
+        </div>
+
+        <!-- Review Link -->
+        <p
+          class="flex items-center justify-center gap-3 mt-3 text-sm text-blue-500"
+        >
+          <a href="https://example.com" class="hover:text-blue-700"
+            >Review invoice from here</a
+          >
+          <svg
+            class="w-3 h-3 mt-1"
+            viewBox="0 0 11 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.28 5.031C10.573 4.738 10.573 4.263 10.28 3.97L6.53 0.22C6.237 -0.073 5.761 -0.073 5.468 0.22C5.175 0.513 5.175 0.988 5.468 1.282L7.941 3.752H0.75C0.335 3.752 0 4.087 0 4.502C0 4.917 0.335 5.252 0.75 5.252H7.938L5.47 7.722C5.177 8.015 5.177 8.491 5.47 8.784C5.763 9.077 6.239 9.077 6.532 8.784L10.282 5.034Z"
+              fill="#3B82F6"
+            />
+          </svg>
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-6 py-4 flex gap-3 border-t border-gray-200">
+        <button
+          id="deleteBtn"
+          class="flex items-center gap-2 px-4 py-3 rounded-md text-sm bg-red-500 text-white"
+        >
+          <svg
+            class="w-3 h-4"
+            viewBox="0 0 12 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.833 13.333C0.833 14.25 1.583 15 2.5 15H9.167C10.083 15 10.833 14.25 10.833 13.333V3.333H0.833V13.333ZM11.667 0.833H8.75L7.917 0H3.75L2.917 0.833H0V2.5H11.667V0.833Z"
+              fill="white"
+            />
+          </svg>
+          <span>Delete Invoice</span>
+        </button>
+        <button
+          id="cancelBtn"
+          class="px-4 py-3 rounded-md text-sm border border-gray-200 text-gray-400"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

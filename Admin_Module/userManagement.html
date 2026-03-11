@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management Form</title>
+
+    <link rel="stylesheet" href="../css/output.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  </head>
+
+  <body class="min-h-screen bg-gray-50 pb-32 text-gray-900">
+    <div class="py-8 px-4 sm:px-6 lg:px-8">
+      <form
+        id="userForm"
+        method="POST"
+        action="/save-user"
+        class="flex flex-col gap-10"
+      >
+        <!-- ── SECTION 1 ── Basic + Role & Access ── -->
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+          <!-- Basic Information -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div class="mb-6 flex items-start gap-3">
+              <svg
+                width="38"
+                height="40"
+                viewBox="0 0 38 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 mt-0.5"
+              >
+                <path
+                  d="M30 0C34.4183 0 38 3.58172 38 8V32C38 36.4183 34.4183 40 30 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H30Z"
+                  fill="#DBEAFE"
+                />
+                <path
+                  d="M30 0C34.4183 0 38 3.58172 38 8V32C38 36.4183 34.4183 40 30 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H30Z"
+                  stroke="#E5E7EB"
+                />
+                <path d="M24 32H13V8H24V32Z" stroke="#E5E7EB" />
+                <g clip-path="url(#clip0_325_17907)">
+                  <path
+                    d="M18.5 20C19.5609 20 20.5783 19.5786 21.3284 18.8284C22.0786 18.0783 22.5 17.0609 22.5 16C22.5 14.9391 22.0786 13.9217 21.3284 13.1716C20.5783 12.4214 19.5609 12 18.5 12C17.4391 12 16.4217 12.4214 15.6716 13.1716C14.9214 13.9217 14.5 14.9391 14.5 16C14.5 17.0609 14.9214 18.0783 15.6716 18.8284C16.4217 19.5786 17.4391 20 18.5 20ZM17.0719 21.5C13.9938 21.5 11.5 23.9937 11.5 27.0719C11.5 27.5844 11.9156 28 12.4281 28H24.5719C25.0844 28 25.5 27.5844 25.5 27.0719C25.5 23.9937 23.0063 21.5 19.9281 21.5H17.0719Z"
+                    fill="#3B82F6"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_325_17907">
+                    <path d="M11.5 12H25.5V28H11.5V12Z" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <div class="flex flex-col">
+                <h2 class="text-lg font-bold text-gray-900">
+                  Basic Information
+                </h2>
+                <p class="text-sm text-gray-500">
+                  Enter user's personal details
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-5">
+              <div class="mb-5 relative">
+                <label for="fullName" class="mb-1.5 block text-sm font-medium">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  placeholder="Enter full name"
+                  autocomplete="off"
+                  class="w-full px-4 py-2.5 rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-gray-500"
+                />
+                <span
+                  id="fullNameError"
+                  class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                ></span>
+              </div>
+
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div class="mb-5 relative">
+                  <label for="email" class="mb-1.5 block text-sm font-medium">
+                    Email Address <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    class="w-full px-4 py-2.5 rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-gray-500"
+                  />
+                  <span
+                    id="emailError"
+                    class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                  ></span>
+                </div>
+
+                <div class="mb-5 relative">
+                  <label for="phone" class="mb-1.5 block text-sm font-medium">
+                    Phone Number <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Enter phone number"
+                    class="w-full px-4 py-2.5 rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-gray-500"
+                  />
+                  <span
+                    id="phoneError"
+                    class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                  ></span>
+                </div>
+              </div>
+
+              <div class="mb-5 relative">
+                <label for="location" class="mb-1.5 block text-sm font-medium">
+                  Location <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="location"
+                  name="location"
+                  type="text"
+                  placeholder="Enter your location"
+                  class="w-full px-4 py-2.5 rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-gray-500"
+                />
+                <span
+                  id="locationError"
+                  class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                ></span>
+              </div>
+
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div class="mb-5 relative">
+                  <label
+                    for="department"
+                    class="mb-1.5 block text-sm font-medium"
+                  >
+                    Department <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select
+                      id="department"
+                      name="department"
+                      class="w-full px-4 py-2.5 pr-12 rounded-lg focus:outline-none appearance-none bg-primary border border-primary focus:shadow text-gray-500"
+                    >
+                      <option value="" disabled selected>
+                        Choose the department
+                      </option>
+                      <option value="Engineering">Engineering</option>
+                      <option value="Design">Design</option>
+                      <option value="HR">HR</option>
+                      <option value="Marketing">Marketing</option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-0 right-4 flex items-center"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    id="departmentError"
+                    class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                  ></span>
+                </div>
+
+                <div class="mb-5 relative">
+                  <label
+                    for="designation"
+                    class="mb-1.5 block text-sm font-medium"
+                  >
+                    Designation <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select
+                      id="designation"
+                      name="designation"
+                      class="w-full px-4 py-2.5 pr-12 rounded-lg focus:outline-none appearance-none bg-primary border border-primary focus:shadow text-gray-500"
+                    >
+                      <option value="" disabled selected>
+                        Choose the designation
+                      </option>
+                      <option value="UI/UX Designer">UI/UX Designer</option>
+                      <option value="Frontend Developer">
+                        Frontend Developer
+                      </option>
+                      <option value="Product Manager">Product Manager</option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-0 right-4 flex items-center"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    id="designationError"
+                    class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="rounded-lg border border-gray-300 bg-gray-100 px-4 py-3.5"
+              >
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex flex-col gap-0.5">
+                    <span class="text-sm font-medium text-gray-800"
+                      >Account Status</span
+                    >
+                    <p class="text-xs text-gray-500">
+                      User account will be active by default
+                    </p>
+                  </div>
+                  <label
+                    class="relative inline-flex cursor-pointer items-center"
+                  >
+                    <input type="checkbox" checked class="sr-only peer" />
+                    <div
+                      class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500 peer-checked:bg-indigo-600"
+                    ></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role & Access -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div class="mb-5 flex items-start gap-3">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 mt-0.5"
+              >
+                <path
+                  d="M32 0C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H32Z"
+                  fill="#DBEAFE"
+                />
+                <path
+                  d="M32 0C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H32Z"
+                  stroke="#E5E7EB"
+                />
+                <path d="M30 32H11V8H30V32Z" stroke="#E5E7EB" />
+                <path d="M28.5 28H12.5V12H28.5V28Z" stroke="#E5E7EB" />
+                <path
+                  d="M20.5 12C20.6438 12 20.7875 12.0313 20.9188 12.0906L26.8031 14.5875C27.4906 14.8781 28.0031 15.5563 28 16.375C27.9844 19.475 26.7094 25.1469 21.325 27.725C20.8031 27.975 20.1969 27.975 19.675 27.725C14.2906 25.1469 13.0156 19.475 13 16.375C12.9969 15.5563 13.5094 14.8781 14.1969 14.5875L20.0844 12.0906C20.2125 12.0313 20.3563 12 20.5 12ZM20.5 14.0875V25.9C24.8125 23.8125 25.9719 19.1906 26 16.4187L20.5 14.0875Z"
+                  fill="#3B82F6"
+                />
+              </svg>
+
+              <div class="flex flex-col">
+                <h2 class="text-lg font-bold text-gray-900">Role & Access</h2>
+                <p class="text-sm text-gray-500">Configure user permissions</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-5">
+              <div class="mb-5 relative">
+                <label for="role" class="mb-2 block text-sm font-medium">
+                  Role <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <select
+                    id="role"
+                    name="role"
+                    class="w-full px-4 py-2.5 pr-12 rounded-lg focus:outline-none appearance-none bg-primary border border-primary focus:shadow text-gray-500"
+                  >
+                    <option value="" disabled selected>Select role here</option>
+                    <option>UX Researcher</option>
+                    <option>Product Designer</option>
+                    <option>Frontend Engineer</option>
+                    <option>Prototyping</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-4 flex items-center"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <span
+                  id="roleError"
+                  class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                ></span>
+              </div>
+
+              <div id="role-container" class="mt-3 flex flex-wrap gap-2"></div>
+
+              <!-- Permission Level -->
+              <div class="mb-2">
+                <label class="mb-2 block text-sm font-medium text-gray-700">
+                  Permission Level
+                </label>
+                <div class="flex flex-wrap gap-5">
+                  <!-- Viewer -->
+                  <label
+                    class="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 transition-all hover:border-gray-400 has-checked:border-indigo-600 has-checked:bg-indigo-50"
+                  >
+                    <div class="relative flex items-center justify-center">
+                      <input
+                        type="radio"
+                        name="level"
+                        value="viewer"
+                        class="peer sr-only"
+                      />
+                      <!-- Solid filled circle when checked -->
+                      <div
+                        class="h-4 w-4 rounded-full border-2 border-gray-300 bg-white transition-all peer-checked:border-indigo-600 peer-checked:bg-indigo-600"
+                      ></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700"
+                      >Viewer</span
+                    >
+                  </label>
+
+                  <!-- Editor (checked by default) -->
+                  <label
+                    class="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 transition-all hover:border-gray-400 has-checked:border-indigo-600 has-checked:bg-indigo-50"
+                  >
+                    <div class="relative flex items-center justify-center">
+                      <input
+                        type="radio"
+                        name="level"
+                        value="editor"
+                        checked
+                        class="peer sr-only"
+                      />
+                      <div
+                        class="h-4 w-4 rounded-full border-2 border-gray-300 bg-white transition-all peer-checked:border-indigo-600 peer-checked:bg-indigo-600"
+                      ></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700"
+                      >Editor</span
+                    >
+                  </label>
+
+                  <!-- Admin -->
+                  <label
+                    class="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 transition-all hover:border-gray-400 has-checked:border-indigo-600 has-checked:bg-indigo-50"
+                  >
+                    <div class="relative flex items-center justify-center">
+                      <input
+                        type="radio"
+                        name="level"
+                        value="admin"
+                        class="peer sr-only"
+                      />
+                      <div
+                        class="h-4 w-4 rounded-full border-2 border-gray-300 bg-white transition-all peer-checked:border-indigo-600 peer-checked:bg-indigo-600"
+                      ></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">Admin</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Assigned Modules -->
+              <div class="flex flex-col gap-2">
+                <div class="mb-5 relative">
+                  <label
+                    for="assignedModule"
+                    class="mb-2 block text-sm font-medium"
+                  >
+                    Assigned Module <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select
+                      id="assignedModule"
+                      name="assignedModule"
+                      class="w-full px-4 py-2.5 pr-12 rounded-lg focus:outline-none appearance-none bg-primary border border-primary focus:shadow text-gray-500"
+                    >
+                      <option value="" disabled selected>
+                        Select module here
+                      </option>
+                      <option value="task">Task Management</option>
+                      <option value="projects">Projects Management</option>
+                      <option value="hr">HR Management</option>
+                      <option value="user">User Management</option>
+                      <option value="analytics">Analytics & Reports</option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-0 right-4 flex items-center"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    id="assignedModuleError"
+                    class="absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+                  ></span>
+                </div>
+
+                <div
+                  id="assigned-modules-container"
+                  class="mt-2 flex flex-wrap gap-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SECTION 2 ── Employment + Notes ── -->
+        <div
+          class="grid grid-cols-1 gap-6 rounded-xl border border-gray-200 bg-white shadow-sm lg:grid-cols-2"
+        >
+          <!-- Employment Details -->
+          <div class="p-6">
+            <div class="mb-6 flex items-start">
+              <div class="mr-3 shrink-0">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M32 0C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H32Z"
+                      fill="#DBEAFE"
+                    />
+                    <path
+                      d="M32 0C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8C0 3.58172 3.58172 0 8 0H32Z"
+                      stroke="#E5E7EB"
+                    />
+                    <path d="M27 32H14V8H27V32Z" stroke="#E5E7EB" />
+                    <g clip-path="url(#clip0_325_18066)">
+                      <path
+                        d="M21 28C23.1217 28 25.1566 27.1571 26.6569 25.6569C28.1571 24.1566 29 22.1217 29 20C29 17.8783 28.1571 15.8434 26.6569 14.3431C25.1566 12.8429 23.1217 12 21 12C18.8783 12 16.8434 12.8429 15.3431 14.3431C13.8429 15.8434 13 17.8783 13 20C13 22.1217 13.8429 24.1566 15.3431 25.6569C16.8434 27.1571 18.8783 28 21 28ZM19.75 22.5H20.5V20.5H19.75C19.3344 20.5 19 20.1656 19 19.75C19 19.3344 19.3344 19 19.75 19H21.25C21.6656 19 22 19.3344 22 19.75V22.5H22.25C22.6656 22.5 23 22.8344 23 23.25C23 23.6656 22.6656 24 22.25 24H19.75C19.3344 24 19 23.6656 19 23.25C19 22.8344 19.3344 22.5 19.75 22.5ZM21 16C21.2652 16 21.5196 16.1054 21.7071 16.2929C21.8946 16.4804 22 16.7348 22 17C22 17.2652 21.8946 17.5196 21.7071 17.7071C21.5196 17.8946 21.2652 18 21 18C20.7348 18 20.4804 17.8946 20.2929 17.7071C20.1054 17.5196 20 17.2652 20 17C20 16.7348 20.1054 16.4804 20.2929 16.2929C20.4804 16.1054 20.7348 16 21 16Z"
+                        fill="#3B82F6"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_325_18066">
+                        <path d="M13 12H29V28H13V12Z" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold leading-tight">
+                  Employment Details
+                </h2>
+                <p class="mt-1 text-sm text-gray-500">
+                  Employment related information
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <!-- Date of Joining -->
+              <div>
+                <label
+                  for="joiningDate"
+                  class="mb-1.5 block text-sm font-medium text-gray-700"
+                >
+                  Date of Joining
+                </label>
+                <div class="relative">
+                  <input
+                    id="joiningDate"
+                    name="joiningDate"
+                    type="date"
+                    class="w-full px-4 py-2.5 pr-10 rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-gray-500 uppercase appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0"
+                  />
+                  <button
+                    type="button"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                  >
+                    <!-- Calendar SVG ya icon -->
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.42857 0.75C5.42857 0.334375 5.04643 0 4.57143 0C4.09643 0 3.71429 0.334375 3.71429 0.75V2H2.28571C1.025 2 0 2.89687 0 4V4.5V6V14C0 15.1031 1.025 16 2.28571 16H13.7143C14.975 16 16 15.1031 16 14V6V4.5V4C16 2.89687 14.975 2 13.7143 2H12.2857V0.75C12.2857 0.334375 11.9036 0 11.4286 0C10.9536 0 10.5714 0.334375 10.5714 0.75V2H5.42857V0.75ZM1.71429 6H14.2857V14C14.2857 14.275 14.0286 14.5 13.7143 14.5H2.28571C1.97143 14.5 1.71429 14.275 1.71429 14V6Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Employee ID -->
+              <div>
+                <label
+                  for="employeeId"
+                  class="mb-1.5 block text-sm font-medium text-gray-700"
+                >
+                  Employee ID
+                </label>
+                <input
+                  id="employeeId"
+                  type="text"
+                  value="EMP-001"
+                  class="w-full px-4 py-2.5 font-medium rounded-lg focus:outline-none bg-primary border border-primary focus:shadow text-blue-500 outline-none"
+                />
+              </div>
+
+              <!-- Tags of User -->
+              <div>
+                <label
+                  for="tags"
+                  class="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  Tags of user
+                </label>
+                <div class="relative">
+                  <select
+                    id="tags"
+                    class="w-full cursor-pointer rounded-lg focus:outline-none appearance-none bg-primary border border-primary focus:shadow text-gray-500 px-4 py-2.5 pr-14 outline-none"
+                  >
+                    <option disabled selected>Select tags for a user</option>
+                    <option>Remote</option>
+                    <option>New Hire</option>
+                    <option>Hybrid</option>
+                    <option>Onsite</option>
+                    <option>Full Time</option>
+                    <option>Part Time</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-4 flex items-center"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  id="selected-tags"
+                  class="mt-3 flex flex-wrap gap-2 min-h-10"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="flex flex-col px-6 py-6">
+            <h2 class="mb-3 text-lg font-semibold">Notes</h2>
+            <textarea
+              id="notes"
+              placeholder="Add any additional notes or comments about this user..."
+              class="min-h-40 w-full grow rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 outline-none"
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- ============================= -->
+    <!-- Fixed Bottom Action Bar -->
+    <!-- ============================= -->
+    <div
+      class="fixed bottom-0 left-0 right-0 w-full bg-white border-t border-gray-200 shadow-lg z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <!-- Left Text -->
+        <div
+          class="flex items-center gap-2 text-sm text-gray-800 w-full sm:w-auto"
+        >
+          <!-- Icon -->
+          <svg
+            width="13"
+            height="14"
+            viewBox="0 0 13 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.9375 3.9375V5.25H8.3125V3.9375C8.3125 2.72891 7.33359 1.75 6.125 1.75C4.91641 1.75 3.9375 2.72891 3.9375 3.9375ZM2.1875 5.25V3.9375C2.1875 1.76367 3.95117 0 6.125 0C8.29883 0 10.0625 1.76367 10.0625 3.9375V5.25H10.5C11.4652 5.25 12.25 6.03477 12.25 7V12.25C12.25 13.2152 11.4652 14 10.5 14H1.75C0.784766 14 0 13.2152 0 12.25V7C0 6.03477 0.784766 5.25 1.75 5.25H2.1875Z"
+              fill="#4B5563"
+            />
+          </svg>
+
+          <span class="leading-relaxed">
+            Your payment information is secure
+          </span>
+        </div>
+
+        <!-- Right Buttons -->
+        <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-3">
+          <button
+            type="button"
+            class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-indigo-300 bg-indigo-50 text-indigo-600 font-medium hover:bg-indigo-100 transition-all inline-flex items-center justify-center gap-2"
+          >
+            <!-- SVG Icon -->
+            <svg
+              width="11"
+              height="16"
+              viewBox="0 0 11 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="shrink-0"
+            >
+              <path
+                d="M0.75 3.23487C0.75 2.36516 0.75 1.93031 0.919282 1.59796C1.06817 1.30575 1.30575 1.06817 1.59796 0.919282C1.93031 0.75 2.36516 0.75 3.23487 0.75H7.58339C8.45309 0.75 8.88795 0.75 9.2203 0.919282C9.51251 1.06817 9.75008 1.30575 9.89898 1.59796C10.0683 1.93031 10.0683 2.36516 10.0683 3.23487V13.5665C10.0683 13.9439 10.0683 14.1326 9.98983 14.2358C9.95594 14.2808 9.91269 14.3178 9.86308 14.3443C9.81347 14.3709 9.75869 14.3863 9.70252 14.3896C9.57284 14.3974 9.41598 14.2925 9.10227 14.0836L5.40913 11.6213L1.71599 14.0829C1.40228 14.2925 1.24542 14.3974 1.11496 14.3896C1.05893 14.3862 1.00429 14.3707 0.954825 14.3442C0.905357 14.3176 0.862234 14.2807 0.828429 14.2358C0.75 14.1326 0.75 13.9439 0.75 13.5665V3.23487Z"
+                fill="#3B82F6"
+                stroke="#3B82F6"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            Save as Draft
+          </button>
+
+          <button
+            type="button"
+            class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-all"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            form="userForm"
+            class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-indigo-500 text-white font-medium shadow-sm hover:bg-indigo-700 transition-all inline-flex items-center justify-center gap-2"
+          >
+            <!-- SVG Icon -->
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="shrink-0"
+            >
+              <path
+                d="M13 2.88889V11.5556C13 11.9528 12.8587 12.2929 12.5761 12.5761C12.2934 12.8592 11.9533 13.0005 11.5556 13H1.44444C1.04722 13 0.707296 12.8587 0.424667 12.5761C0.142037 12.2934 0.000481481 11.9533 0 11.5556V1.44444C0 1.04722 0.141556 0.707296 0.424667 0.424667C0.707778 0.142037 1.0477 0.000481481 1.44444 0H10.1111L13 2.88889ZM6.5 10.8333C7.10185 10.8333 7.61343 10.6227 8.03472 10.2014C8.45602 9.78009 8.66667 9.26852 8.66667 8.66667C8.66667 8.06481 8.45602 7.55324 8.03472 7.13194C7.61343 6.71065 7.10185 6.5 6.5 6.5C5.89815 6.5 5.38657 6.71065 4.96528 7.13194C4.54398 7.55324 4.33333 8.06481 4.33333 8.66667C4.33333 9.26852 4.54398 9.78009 4.96528 10.2014C5.38657 10.6227 5.89815 10.8333 6.5 10.8333ZM2.16667 5.05555H8.66667V2.16667H2.16667V5.05555Z"
+                fill="white"
+              />
+            </svg>
+
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+
+    <!-- <script src="js/roleAndAccess.js"></script>
+    <script src="/js/validation.js"></script> -->
+  </body>
+</html>

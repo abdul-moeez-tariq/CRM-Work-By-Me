@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Profile Photo</title>
+    <link rel="stylesheet" href="/css/output.css" />
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen grid place-items-center">
+    <div
+      class="w-full max-w-xl mx-4 overflow-hidden bg-white rounded-2xl shadow-xl"
+    >
+      <!-- Header -->
+      <div class="p-6">
+        <h2 class="text-2xl font-semibold text-gray-900">
+          Upload Profile Photo
+        </h2>
+        <p class="mt-2 text-gray-500 text-sm">
+          Upload a photo to personalize your admin profile.
+        </p>
+      </div>
+
+      <!-- Upload File Area -->
+      <div class="px-8 py-4">
+        <!-- Hidden real file input -->
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/jpeg,image/png"
+          class="hidden"
+        />
+
+        <!-- Styled clickable area -->
+        <label
+          for="photoInput"
+          class="block border-2 border-dashed border-gray-300 rounded-xl p-10 text-center cursor-pointer hover:border-purple-400 transition-colors"
+        >
+          <div
+            class="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              width="64"
+              height="64"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0Z"
+                fill="#8A3DD0"
+                fill-opacity="0.15"
+              />
+              <path
+                d="M32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0Z"
+                stroke="#E5E7EB"
+              />
+              <path
+                d="M26.9891 22.0375L26.5016 23.5H23C21.3453 23.5 20 24.8453 20 26.5V38.5C20 40.1547 21.3453 41.5 23 41.5H41C42.6547 41.5 44 40.1547 44 38.5V26.5C44 24.8453 42.6547 23.5 41 23.5H37.4984L37.0109 22.0375C36.7062 21.1188 35.8484 20.5 34.8781 20.5H29.1219C28.1516 20.5 27.2938 21.1188 26.9891 22.0375ZM32 28C33.1935 28 34.3381 28.4741 35.182 29.318C36.0259 30.1619 36.5 31.3065 36.5 32.5C36.5 33.6935 36.0259 34.8381 35.182 35.682C34.3381 36.5259 33.1935 37 32 37C30.8065 37 29.6619 36.5259 28.818 35.682C27.9741 34.8381 27.5 33.6935 27.5 32.5C27.5 31.3065 27.9741 30.1619 28.818 29.318C29.6619 28.4741 30.8065 28 32 28Z"
+                fill="#A855F7"
+              />
+            </svg>
+          </div>
+
+          <p class="mt-5 text-gray-700 font-medium">
+            Drag & drop your photo here
+          </p>
+          <p class="mt-1 text-gray-500 text-sm">or click to browse files</p>
+          <p class="mt-4 text-gray-500 text-xs">
+            Supported formats: JPG, PNG (Max size: 5MB)
+          </p>
+        </label>
+      </div>
+
+      <!-- Buttons -->
+      <div class="px-8 py-5 flex justify-end gap-3">
+        <button
+          type="button"
+          id="cancelBtn"
+          class="px-6 py-2 text-gray-700 font-medium hover:bg-gray-100 rounded-lg transition cursor-pointer"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          id="saveBtn"
+          disabled
+          class="px-6 py-2 bg-gray-200 text-white font-medium rounded-lg cursor-not-allowed"
+        >
+          Save Photo
+        </button>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        const $saveBtn = $("#saveBtn");
+        const $fileInput = $("#photoInput");
+        const $cancelBtn = $("#cancelBtn");
+
+        const MAX_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
+
+        // ────────────────────────────────────────────────
+        // Enable / Disable Save button
+        // ────────────────────────────────────────────────
+        function enableSaveButton() {
+          $saveBtn
+            .prop("disabled", false)
+            .removeClass("bg-purple-300 cursor-not-allowed")
+            .addClass("bg-purple-600 hover:bg-purple-700 cursor-pointer");
+        }
+
+        function disableSaveButton() {
+          $saveBtn
+            .prop("disabled", true)
+            .removeClass("bg-purple-600 hover:bg-purple-700 cursor-pointer")
+            .addClass("bg-purple-300 cursor-not-allowed");
+        }
+
+        // ────────────────────────────────────────────────
+        // When user selects a file
+        // ────────────────────────────────────────────────
+        $fileInput.on("change", function () {
+          const file = this.files[0];
+
+          // No file selected
+          if (!file) {
+            disableSaveButton();
+            return;
+          }
+
+          // File is too big → error in console + clear input
+          if (file.size > MAX_SIZE_BYTES) {
+            const sizeMB = (file.size / 1024 / 1024).toFixed(2);
+            console.error(
+              `File too large: ${sizeMB} MB (maximum allowed: 5 MB) → ${file.name}`,
+            );
+            this.value = ""; // remove the invalid file
+            disableSaveButton();
+            return;
+          }
+
+          // File is acceptable → enable button
+          enableSaveButton();
+        });
+
+        // ────────────────────────────────────────────────
+        // Cancel → clear everything
+        // ────────────────────────────────────────────────
+        $cancelBtn.on("click", function () {
+          $fileInput.val("");
+          disableSaveButton();
+          // You can add modal close logic here if needed
+        });
+      });
+    </script>
+  </body>
+</html>

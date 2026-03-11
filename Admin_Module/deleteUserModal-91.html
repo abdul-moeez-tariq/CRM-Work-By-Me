@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete User Confirmation</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-black/60 z-40"></div>
+
+    <!-- Modal -->
+    <div
+      class="relative z-50 w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden"
+    >
+      <!-- Header -->
+      <div
+        class="px-6 py-5 flex items-center justify-between border-b border-red-100"
+      >
+        <div class="flex items-center gap-3">
+          <!-- Icon -->
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.5 0C27.165 0 35 7.835 35 17.5C35 27.165 27.165 35 17.5 35C7.835 35 0 27.165 0 17.5C0 7.835 7.835 0 17.5 0Z"
+              fill="#FEE2E2"
+            />
+            <path
+              d="M17.5 0C27.165 0 35 7.835 35 17.5C35 27.165 27.165 35 17.5 35C7.835 35 0 27.165 0 17.5C0 7.835 7.835 0 27.165 0Z"
+              stroke="#E5E7EB"
+            />
+            <path
+              d="M24.794 27.706H10.211V7.289H24.794V27.706Z"
+              stroke="#E5E7EB"
+            />
+            <g clip-path="url(#clip0_120_63753)">
+              <path
+                d="M17.502 10.758C17.906 10.758 18.279 10.971 18.484 11.322L24.637 21.804C24.845 22.157 24.845 22.593 24.642 22.946C24.44 23.299 24.061 23.518 23.654 23.518H11.349C10.942 23.518 10.563 23.299 10.361 22.946C10.159 22.593 10.162 22.154 10.366 21.804L16.519 11.322C16.724 10.971 17.097 10.758 17.502 10.758ZM17.502 14.404C17.123 14.404 16.818 14.708 16.818 15.087V18.277C16.818 18.656 17.123 18.961 17.502 18.961C17.88 18.961 18.185 18.656 18.185 18.277V15.087C18.185 14.708 17.88 14.404 17.502 14.404ZM18.413 20.784C18.413 20.542 18.317 20.31 18.146 20.139C17.975 19.968 17.743 19.872 17.502 19.872C17.26 19.872 17.028 19.968 16.857 20.139C16.686 20.31 16.59 20.542 16.59 20.784C16.59 21.025 16.686 21.257 16.857 21.428C17.028 21.599 17.26 21.695 17.502 21.695C17.743 21.695 17.975 21.599 18.146 21.428C18.317 21.257 18.413 21.025 18.413 20.784Z"
+                fill="#EF4444"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_120_63753">
+                <path
+                  d="M10.211 9.844H24.794V24.427H10.211V9.844Z"
+                  fill="white"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <h2 class="text-xl font-semibold">Delete User</h2>
+        </div>
+
+        <!-- Close Button -->
+        <button
+          class="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
+        >
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="px-6 py-4">
+        <p class="text-gray-500 leading-relaxed mb-4">
+          Are you sure you want to delete this user? This action will
+          permanently remove the user and revoke all system access.
+        </p>
+
+        <div class="bg-gray-50 border border-gray-300 rounded-lg p-5 mb-4">
+          <h3 class="text-sm mb-1 font-medium text-gray-500">User Details:</h3>
+          <div class="text-sm">
+            <div>
+              <span class="font-semibold text-gray-900">John Smith</span>
+            </div>
+            <div>
+              <span class="text-gray-500">john@crm.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <label class="flex items-center gap-3 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            class="w-5 h-5 rounded border-gray-300 text-red-600"
+          />
+          <span class="text-sm text-gray-400"
+            >I understand this action cannot be undone</span
+          >
+        </label>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-6 py-5 mt-2 bg-gray-50 flex items-center gap-3">
+        <button
+          class="px-6 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-700 focus:outline-none flex items-center gap-2 cursor-pointer"
+          disabled
+        >
+          <svg
+            width="12"
+            height="15"
+            viewBox="0 0 12 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.833 13.333C0.833 14.25 1.583 15 2.5 15H9.167C10.083 15 10.833 14.25 10.833 13.333V3.333H0.833V13.333ZM11.667 0.833H8.75L7.917 0H3.75L2.917 0.833H0V2.5H11.667V0.833Z"
+              fill="white"
+            />
+          </svg>
+          Delete User
+        </button>
+
+        <button
+          class="px-6 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

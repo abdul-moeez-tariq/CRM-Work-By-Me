@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete File</title>
+    <link href="/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="grid p-2 place-items-center min-h-screen bg-black">
+    <div class="w-full max-w-md p-8 bg-white rounded-xl">
+      <!-- Icon -->
+      <div class="flex justify-center">
+        <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none">
+          <path
+            d="M0 32C0 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32Z"
+            fill="#FEE2E2"
+          />
+          <path
+            d="M32 18C24.268 18 18 24.268 18 32C18 39.732 24.268 46 32 46C39.732 46 46 39.732 46 32C46 24.268 39.732 18 32 18ZM32 38C31.4696 38 30.9609 37.7893 30.5858 37.4142C30.2107 37.0391 30 36.5304 30 36C30 35.4696 30.2107 34.9609 30.5858 34.5858C30.9609 34.2107 31.4696 34 32 34C32.5304 34 33.0391 34.2107 33.4142 34.5858C33.7893 34.9609 34 35.4696 34 36C34 36.5304 33.7893 37.0391 33.4142 37.4142C33.0391 37.7893 32.5304 38 32 38ZM34 30C34 30.5304 33.7893 31.0391 33.4142 31.4142C33.0391 31.7893 32.5304 32 32 32C31.4696 32 30.9609 31.7893 30.5858 31.4142C30.2107 31.0391 30 30.5304 30 30V26C30 25.4696 30.2107 24.9609 30.5858 24.5858C30.9609 24.2107 31.4696 24 32 24C32.5304 24 33.0391 24.2107 33.4142 24.5858C33.7893 24.9609 34 25.4696 34 26V30Z"
+            fill="#EF4444"
+          />
+        </svg>
+      </div>
+
+      <!-- Title -->
+      <h2 class="mt-5 text-2xl font-semibold text-center text-gray-900">
+        Delete file?
+      </h2>
+
+      <!-- Description -->
+      <p class="mt-2 text-center text-gray-500">
+        Are you sure you want to delete this file?
+      </p>
+
+      <!-- File Name -->
+      <p class="mt-1 text-center font-medium text-gray-900">
+        <span id="fileTitle">"Project Proposal</span>
+        <span id="fileExtension" class="block">2024.pdf"</span>
+      </p>
+
+      <!-- Warning -->
+      <div
+        id="fileWarning"
+        class="mt-6 p-4 border border-yellow-400 bg-yellow-100 rounded-lg text-sm text-amber-800"
+      >
+        Warning: This action cannot be undone. The file will be permanently
+        deleted from the system.
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex mt-8 gap-4">
+        <button
+          type="button"
+          id="cancelFileBtn"
+          class="w-full py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 cursor-pointer"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          id="deleteFileBtn"
+          class="w-full py-3 bg-red-500 rounded-lg text-white hover:bg-red-400 cursor-pointer"
+        >
+          Delete file
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

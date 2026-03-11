@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="transition-colors duration-300">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Prevent flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+
+    <link rel="stylesheet" href="./css/output.css" />
+
+    <title>Admin Module</title>
+  </head>
+
+  <body class="transition-colors duration-300">
+    <div id="header"></div>
+
+    <!-- Sidebar + Main Wrapper -->
+    <div id="sidebar-container"></div>
+
+    <!-- Overlay yahan direct daal do -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 xl:hidden hidden opacity-0 transition-opacity duration-300"
+    ></div>
+
+    <main class="p-6">Main Content Here</main>
+
+    <!-- Dono scripts ko type="module" bana do -->
+    <script type="module" src="./js/theme.js"></script>
+    <script type="module" src="./js/loadComponents.js"></script>
+  </body>
+</html>

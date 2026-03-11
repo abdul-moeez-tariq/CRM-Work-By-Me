@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Event</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="min-h-screen grid place-items-center bg-gray-100">
+    <div class="w-full max-w-md bg-white rounded-xl shadow-xl">
+      <h2 class="px-6 py-5 text-xl font-semibold border-b border-gray-200">
+        Delete Event
+      </h2>
+
+      <div class="p-6">
+        <p class="text-sm text-gray-600">
+          Are you sure you want to delete this event? This action cannot be
+          undone and the event will be removed from the calendar.
+        </p>
+
+        <div
+          class="flex items-center gap-3 mt-5 p-3 bg-gray-50 border border-gray-200 rounded-lg"
+        >
+          <svg class="w-12 h-12 shrink-0" viewBox="0 0 48 48" fill="none">
+            <rect width="48" height="48" rx="8" fill="#EFF6FF" />
+            <path
+              d="M20 14v3m8-3v3m-12.5 4.09h17m.5-.59v8.5c0 3-1.5 5-5 5h-8c-3.5 0-5-2-5-5v-8.5c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5Z"
+              stroke="#3B82F6"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="20.3" cy="25.7" r="1" fill="#3B82F6" />
+            <circle cx="24" cy="25.7" r="1" fill="#3B82F6" />
+            <circle cx="27.7" cy="25.7" r="1" fill="#3B82F6" />
+            <circle cx="20.3" cy="28.7" r="1" fill="#3B82F6" />
+            <circle cx="24" cy="28.7" r="1" fill="#3B82F6" />
+            <circle cx="27.7" cy="28.7" r="1" fill="#3B82F6" />
+          </svg>
+
+          <div>
+            <p class="font-semibold text-gray-900">Team Standup</p>
+            <div class="flex items-center gap-1 mt-1 text-sm text-gray-500">
+              <svg class="w-4 h-4" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M6.43 2.93v3.5l2.33 2.33m3.5-2.33c0 3.22-2.61 5.83-5.83 5.83S.6 9.65.6 6.43 3.21.6 6.43.6s5.83 2.61 5.83 5.83Z"
+                  stroke="#6B7280"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Dec 4, 2024</span>
+              <span class="mx-1 text-gray-400">•</span>
+              <span>9:00 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 px-6 py-4">
+        <button
+          type="button"
+          id="cancelEventBtn"
+          class="px-5 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 cursor-pointer"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          id="deleteEventBtn"
+          class="px-5 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer"
+        >
+          Delete Event
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

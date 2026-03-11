@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Task Confirmation</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+
+  <body class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+    <div
+      class="w-full max-w-xl bg-white rounded-xl shadow border border-gray-200 overflow-hidden"
+    >
+      <!-- Header -->
+      <div
+        class="px-6 pt-6 pb-6 flex items-start gap-4 border-b border-red-100"
+      >
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100"
+        >
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0Z"
+              fill="#FEE2E2"
+            />
+            <path
+              d="M24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0Z"
+              stroke="#E5E7EB"
+            />
+            <path d="M32.75 38H15.25V10H32.75V38Z" stroke="#E5E7EB" />
+            <g clip-path="url(#clip0_325_54893)">
+              <path
+                d="M21.9102 15.5156L21.168 16.625H26.832L26.0898 15.5156C26.0312 15.4297 25.9336 15.375 25.8281 15.375H22.168C22.0625 15.375 21.9648 15.4258 21.9062 15.5156H21.9102ZM27.6523 14.4766L29.0859 16.625H29.625H31.5H31.8125C32.332 16.625 32.75 17.043 32.75 17.5625C32.75 18.082 32.332 18.5 31.8125 18.5H31.5V30.375C31.5 32.1016 30.1016 33.5 28.375 33.5H19.625C17.8984 33.5 16.5 32.1016 16.5 30.375V18.5H16.1875C15.668 18.5 15.25 18.082 15.25 17.5625C15.25 17.043 15.668 16.625 16.1875 16.625H16.5H18.375H18.9141L20.3477 14.4727C20.7539 13.8672 21.4375 13.5 22.168 13.5H25.8281C26.5586 13.5 27.2422 13.8672 27.6484 14.4727L27.6523 14.4766ZM18.375 18.5V30.375C18.375 31.0664 18.9336 31.625 19.625 31.625H28.375C29.0664 31.625 29.625 31.0664 29.625 30.375V18.5H18.375ZM21.5 21V29.125C21.5 29.4688 21.2188 29.75 20.875 29.75C20.5312 29.75 20.25 29.4688 20.25 29.125V21C20.25 20.6562 20.5312 20.375 20.875 20.375C21.2188 20.375 21.5 20.6562 21.5 21ZM24.625 21V29.125C24.625 29.4688 24.3438 29.75 24 29.75C23.6562 29.75 23.375 29.4688 23.375 29.125V21C23.375 20.6562 23.6562 20.375 24 20.375C24.3438 20.375 24.625 20.6562 24.625 21ZM27.75 21V29.125C27.75 29.4688 27.4688 29.75 27.125 29.75C26.7812 29.75 26.5 29.4688 26.5 29.125V21C26.5 20.6562 26.7812 20.375 27.125 20.375C27.4688 20.375 27.75 20.6562 27.75 21Z"
+                fill="#DC2626"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_325_54893">
+                <path d="M15.25 13.5H32.75V33.5H15.25V13.5Z" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Delete Task?</h2>
+          <p class="mt-1 text-sm text-gray-500">
+            This action requires confirmation
+          </p>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="px-6 py-6">
+        <p class="text-base font-semibold text-gray-900 mt-1">
+          Are you sure you want to delete this task?
+        </p>
+
+        <p class="text-sm text-gray-600 mt-1">
+          This action will permanently remove the task and all associated data
+          including:
+        </p>
+
+        <ul class="text-sm text-gray-700 mt-2">
+          <li class="flex items-start gap-3 mt-2">
+            <svg
+              class="mt-1 h-3 w-3 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <circle cx="6" cy="6" r="6" />
+            </svg>
+            Task comments
+          </li>
+          <li class="flex items-start gap-3 mt-2">
+            <svg
+              class="mt-1 h-3 w-3 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <circle cx="6" cy="6" r="6" />
+            </svg>
+            Attachments
+          </li>
+          <li class="flex items-start gap-3 mt-2">
+            <svg
+              class="mt-1 h-3 w-3 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <circle cx="6" cy="6" r="6" />
+            </svg>
+            Activity history
+          </li>
+          <li class="flex items-start gap-3 mt-2">
+            <svg
+              class="mt-1 h-3 w-3 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <circle cx="6" cy="6" r="6" />
+            </svg>
+            Time logs
+          </li>
+        </ul>
+
+        <p class="text-sm font-medium text-red-600 mt-2">
+          This action cannot be undone.
+        </p>
+
+        <!-- Task card -->
+        <div
+          class="mt-4 px-5 py-4 rounded-xl border border-gray-200 bg-gray-50"
+        >
+          <div class="mt-1 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span
+                class="rounded bg-white px-2 py-1 text-sm font-medium text-gray-500"
+                >TASK-1247</span
+              >
+              <span
+                class="inline-flex items-center gap-1.5 rounded-full bg-yellow-100 px-3 py-1 text-xs font-medium text-amber-800"
+              >
+                <span class="h-2 w-2 rounded-full bg-amber-800"></span>
+                In Progress
+              </span>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-3">
+            Implement user authentication module
+          </h3>
+
+          <div class="flex items-center gap-2 text-sm text-gray-700 mt-3">
+            <svg
+              width="12"
+              height="11"
+              fill="none"
+              viewBox="0 0 12 11"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 10.5H10.5C11.33 10.5 12 9.83 12 9V3C12 2.17 11.33 1.5 10.5 1.5H6.75C6.51 1.5 6.29 1.39 6.15 1.2L5.7 0.6C5.42 0.22 4.97 0 4.5 0H1.5C0.67 0 0 0.67 0 1.5V9C0 9.83 0.67 10.5 1.5 10.5Z"
+                fill="#8A3DD0"
+              />
+            </svg>
+            <span>Smart CRM Development</span>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 text-sm sm:grid-cols-3 mt-3">
+            <div>
+              <div class="text-xs text-gray-500">Assigned To</div>
+              <div class="flex items-center gap-2 mt-1">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2598931377/display_1500/stock-photo-confident-successful-young-asian-company-ceo-man-posing-for-business-portrait-looking-at-camera-2598931377.jpg"
+                  class="h-6 w-6 rounded-full border object-cover"
+                  alt=""
+                />
+                <span class="font-medium text-gray-800">Michael Chen</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-xs text-gray-500">Due Date</div>
+              <div class="flex items-center gap-1 mt-1 text-gray-700">
+                <svg
+                  width="13"
+                  height="14"
+                  viewBox="0 0 13 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.15625 0.65625C4.15625 0.292578 3.86367 0 3.5 0C3.13633 0 2.84375 0.292578 2.84375 0.65625V1.75H1.75C0.784766 1.75 0 2.53477 0 3.5V3.9375V5.25V12.25C0 13.2152 0.784766 14 1.75 14H10.5C11.4652 14 12.25 13.2152 12.25 12.25V5.25V3.9375V3.5C12.25 2.53477 11.4652 1.75 10.5 1.75H9.40625V0.65625C9.40625 0.292578 9.11367 0 8.75 0C8.38633 0 8.09375 0.292578 8.09375 0.65625V1.75H4.15625V0.65625ZM1.3125 5.25H10.9375V12.25C10.9375 12.4906 10.7406 12.6875 10.5 12.6875H1.75C1.50937 12.6875 1.3125 12.4906 1.3125 12.25V5.25Z"
+                    fill="#9CA3AF"
+                  />
+                </svg>
+                <span>Dec 15, 2024</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-xs text-gray-500">Priority</div>
+              <div
+                class="mt-1 inline-flex items-center gap-1 rounded-full bg-red-100 px-2.5 py-1 text-xs font-medium text-red-700"
+              >
+                <svg class="h-2.5 w-2.5" viewBox="0 0 8 9" fill="none">
+                  <path
+                    d="M4.19 0.18C3.95 -0.06 3.55 -0.06 3.31 0.18L0.18 3.31C-0.06 3.55 -0.06 3.95 0.18 4.19C0.43 4.44 0.82 4.44 1.07 4.19L3.13 2.13V8.12C3.13 8.47 3.4 8.75 3.75 8.75C4.1 8.75 4.38 8.47 4.38 8.12V2.13L6.43 4.19C6.68 4.44 7.07 4.44 7.32 4.19C7.56 3.95 7.56 3.55 7.32 3.31L4.19 0.18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                High
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation -->
+        <div class="mt-4">
+          <label class="block text-sm font-medium text-gray-700">
+            Type
+            <span class="font-mono font-semibold text-red-600">DELETE</span> to
+            confirm
+          </label>
+
+          <input
+            id="confirmDelete"
+            type="text"
+            placeholder="Type DELETE here"
+            class="w-full mt-2 rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none"
+            autocomplete="off"
+          />
+
+          <p class="flex items-center gap-2 mt-2 text-xs text-gray-500">
+            <svg
+              class="h-4 w-4 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM9 5a1 1 0 011 1v4a1 1 0 11-2 0V6a1 1 0 011-1zm0 8a1 1 0 100 2h2a1 1 0 100-2H9z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            This step ensures you want to proceed with deletion
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+        class="flex items-center justify-between px-6 py-4 border-t border-gray-200"
+      >
+        <button
+          id="cancelBtn"
+          class="rounded-lg border border-gray-300 bg-white px-5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+        >
+          Cancel
+        </button>
+
+        <button
+          id="deleteBtn"
+          disabled
+          class="flex items-center gap-2 rounded-lg bg-gray-300 px-5 py-2 text-sm font-medium text-gray-500 hover:bg-gray-400 hover:text-gray-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors cursor-pointer"
+        >
+          <svg
+            width="14"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.32812 1.6125L4.73438 2.5H9.26562L8.67188 1.6125C8.625 1.54375 8.54688 1.5 8.4625 1.5H5.53438C5.45 1.5 5.37187 1.54062 5.325 1.6125H5.32812ZM9.92188 0.78125L11.0688 2.5H11.5H13H13.25C13.6656 2.5 14 2.83437 14 3.25C14 3.66563 13.6656 4 13.25 4H13V13.5C13 14.8813 11.8813 16 10.5 16H3.5C2.11875 16 1 14.8813 1 13.5V4H0.75C0.334375 4 0 3.66563 0 3.25C0 2.83437 0.334375 2.5 0.75 2.5H1H2.5H2.93125L4.07812 0.778125C4.40312 0.29375 4.95 0 5.53438 0H8.4625C9.04688 0 9.59375 0.29375 9.91875 0.778125L9.92188 0.78125ZM2.5 4V13.5C2.5 14.0531 2.94688 14.5 3.5 14.5H10.5C11.0531 14.5 11.5 14.0531 11.5 13.5V4H2.5ZM5 6V12.5C5 12.775 4.775 13 4.5 13C4.225 13 4 12.775 4 12.5V6C4 5.725 4.225 5.5 4.5 5.5C4.775 5.5 5 5.725 5 6ZM7.5 6V12.5C7.5 12.775 7.275 13 7 13C6.725 13 6.5 12.775 6.5 12.5V6C6.5 5.725 6.725 5.5 7 5.5C7.275 5.5 7.5 5.725 7.5 6ZM10 6V12.5C10 12.775 9.775 13 9.5 13C9.225 13 9 12.775 9 12.5V6C9 5.725 9.225 5.5 9.5 5.5C9.775 5.5 10 5.725 10 6Z"
+              fill="#6B7280"
+            />
+          </svg>
+          Delete Task
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const input = document.getElementById("confirmDelete");
+      const deleteBtn = document.getElementById("deleteBtn");
+
+      input.addEventListener("input", () => {
+        const value = input.value.trim();
+
+        if (value === "DELETE") {
+          deleteBtn.disabled = false;
+        } else {
+          deleteBtn.disabled = true;
+        }
+      });
+
+      // Cancel button logic
+      const cancelBtn = document.getElementById("cancelBtn");
+
+      cancelBtn.addEventListener("click", () => {
+        input.value = "";
+        deleteBtn.disabled = true;
+      });
+    </script>
+  </body>
+</html>

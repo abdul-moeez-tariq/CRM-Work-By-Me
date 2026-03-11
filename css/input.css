@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+.dark {
+  background-color: #000000; /* Dark mode override */
+  color: #ffffff;
+}
+
+/* Light mode → circle LEFT pe (off state) */
+#themeToggle {
+  background-color: #d1d5db;
+}
+
+#toggleCircle {
+  transform: translateX(0.25rem); /* left side */
+}
+
+/* Dark mode → circle RIGHT pe (on state) */
+html.dark #themeToggle {
+  background-color: #334155;
+}
+
+html.dark #toggleCircle {
+  transform: translateX(
+    2.2rem
+  ) !important; /* right side — yeh sahi hai agar dark = on */
+}
+
+@media (min-width: 1280px) {
+  main {
+    margin-left: 16rem;
+  }
+}

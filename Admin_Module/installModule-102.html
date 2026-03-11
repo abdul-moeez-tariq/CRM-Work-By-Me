@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install HR Module</title>
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 md:p-8">
+    <div class="w-full max-w-4xl bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+        <!-- Header -->
+        <div class="px-8 py-3 flex items-center justify-between gap-4 flex-wrap">
+            <h1 class="text-2xl font-bold text-gray-900">Install Module</h1>
+            <div class="flex items-center gap-3">
+                <button id="cancelBtn"
+                    class="px-5 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                    Cancel
+                </button>
+                <button id="installModule"
+                    class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none cursor-pointer">
+
+                    <svg class="w-3.5 h-4 shrink-0" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.65833 5H8.33333V0.833333C8.33333 0.375 7.95833 0 7.5 0H4.16667C3.70833 0 3.33333 0.375 3.33333 0.833333V5H2.00833C1.26667 5 0.891667 5.9 1.41667 6.425L5.24167 10.25C5.56667 10.575 6.09167 10.575 6.41667 10.25L10.2417 6.425C10.7667 5.9 10.4 5 9.65833 5ZM0 13.3333C0 13.7917 0.375 14.1667 0.833333 14.1667H10.8333C11.2917 14.1667 11.6667 13.7917 11.6667 13.3333C11.6667 12.875 11.2917 12.5 10.8333 12.5H0.833333C0.375 12.5 0 12.875 0 13.3333Z"
+                            fill="currentColor" />
+                    </svg>
+
+                    Install Module
+                </button>
+            </div>
+        </div>
+
+        <!-- Module info -->
+        <div class="flex items-center gap-6 mb-6 px-8 py-5">
+            <!-- Left Icon -->
+            <div
+                class="w-12 h-12 px-6 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl font-semibold shrink-0">
+                <svg width="94" height="94" viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="shrink-0 mt-1 overflow-hidden">
+                    <g filter="url(#filter0_dd_6_14760)">
+                        <path
+                            d="M15 21C15 12.1634 22.1634 5 31 5H63C71.8366 5 79 12.1634 79 21V53C79 61.8366 71.8366 69 63 69H31C22.1634 69 15 61.8366 15 53V21Z"
+                            fill="url(#paint0_linear_6_14760)" />
+                        <path d="M57.5 53H36.5V21H57.5V53Z" stroke="#E5E7EB" />
+                        <g clip-path="url(#clip0_6_14760)">
+                            <path
+                                d="M47 36C45.4087 36 43.8826 35.3679 42.7574 34.2426C41.6321 33.1174 41 31.5913 41 30C41 28.4087 41.6321 26.8826 42.7574 25.7574C43.8826 24.6321 45.4087 24 47 24C48.5913 24 50.1174 24.6321 51.2426 25.7574C52.3679 26.8826 53 28.4087 53 30C53 31.5913 52.3679 33.1174 51.2426 34.2426C50.1174 35.3679 48.5913 36 47 36ZM46.3016 40.8375L45.4297 39.3844C45.1297 38.8828 45.4906 38.25 46.0719 38.25H47H47.9234C48.5047 38.25 48.8656 38.8875 48.5656 39.3844L47.6938 40.8375L49.2594 46.6453L50.9469 39.7594C51.0406 39.3797 51.4062 39.1312 51.7859 39.2297C55.0719 40.0547 57.5 43.0266 57.5 46.5609C57.5 47.3578 56.8531 48 56.0609 48H49.8828C49.7844 48 49.6953 47.9812 49.6109 47.9484L49.625 48H44.375L44.3891 47.9484C44.3047 47.9812 44.2109 48 44.1172 48H37.9391C37.1469 48 36.5 47.3531 36.5 46.5609C36.5 43.0219 38.9328 40.05 42.2141 39.2297C42.5938 39.1359 42.9594 39.3844 43.0531 39.7594L44.7406 46.6453L46.3062 40.8375H46.3016Z"
+                                fill="white" />
+                        </g>
+                    </g>
+                    <defs>
+                        <filter id="filter0_dd_6_14760" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="10" />
+                            <feGaussianBlur stdDeviation="7.5" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6_14760" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="3" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                            <feBlend mode="normal" in2="effect1_dropShadow_6_14760"
+                                result="effect2_dropShadow_6_14760" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_6_14760" result="shape" />
+                        </filter>
+                        <linearGradient id="paint0_linear_6_14760" x1="-7.62742" y1="27.6274" x2="37.6274" y2="72.8823"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#A855F7" />
+                            <stop offset="1" stop-color="#9333EA" />
+                        </linearGradient>
+                        <clipPath id="clip0_6_14760">
+                            <path d="M36.5 24H57.5V48H36.5V24Z" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <!-- Right Text -->
+            <div>
+                <div class="flex items-center gap-8 flex-wrap">
+                    <h2 class="text-xl font-semibold text-gray-900">Project Module</h2>
+                    <span
+                        class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
+                        Available
+                    </span>
+                </div>
+                <div class="mt-1 text-sm text-gray-500 flex items-center gap-5 flex-wrap">
+                    <span>Version 1.4.2</span>
+                    <span class="text-gray-400">•</span>
+                    <span>Updated 2 days ago</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two-column content grid (starts after header) -->
+        <div class="w-full flex justify-center gap-2">
+            <!-- Left + Center -->
+            <div class="w-2/3 flex-1 px-6 py-3">
+                <!-- Description -->
+                <div class="bg-blue-50 rounded-lg p-6">
+                    <p class="text-gray-600 leading-relaxed mb-6 text-base">
+                        Comprehensive human resources management system for employee lifecycle management, payroll
+                        processing, attendance tracking, and performance reviews.
+                    </p>
+
+                    <ul class="grid gap-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Employee profile management and onboarding
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Attendance and leave tracking system
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Performance reviews and goal management
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Document management and e-signatures
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Analytics dashboard and reporting tools
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Installation Details -->
+                <div class="mt-5 bg-white">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-5">Installation Details</h3>
+
+                    <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-2 px-5 py-4 border-b border-gray-200 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Module Size</div>
+                            <div class="text-sm font-medium text-gray-900 text-right">32 MB</div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-2 px-5 py-4 border-b border-gray-200 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Estimated Installation Time</div>
+                            <div class="text-sm font-medium text-gray-900 text-right">10-15 seconds</div>
+                        </div>
+
+                        <!-- Row 3 - Dependencies with check icon -->
+                        <div class="grid grid-cols-2 px-5 py-4 border-b border-gray-200 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Dependencies</div>
+                            <div class="flex items-center justify-end gap-2 text-sm font-medium text-green-600">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 14C8.85652 14 10.637 13.2625 11.9497 11.9497C13.2625 10.637 14 8.85652 14 7C14 5.14348 13.2625 3.36301 11.9497 2.05025C10.637 0.737498 8.85652 0 7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 8.85652 0.737498 10.637 2.05025 11.9497C3.36301 13.2625 5.14348 14 7 14ZM10.0898 5.71484L6.58984 9.21484C6.33281 9.47188 5.91719 9.47188 5.66289 9.21484L3.91289 7.46484C3.65586 7.20781 3.65586 6.79219 3.91289 6.53789C4.16992 6.28359 4.58555 6.28086 4.83984 6.53789L6.125 7.82305L9.16016 4.78516C9.41719 4.52812 9.83281 4.52812 10.0871 4.78516C10.3414 5.04219 10.3441 5.45781 10.0871 5.71211L10.0898 5.71484Z"
+                                        fill="#16A34A" />
+                                </svg>
+
+                                All met
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="grid grid-cols-2 px-5 py-4 border-b border-gray-200 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Compatibility</div>
+                            <div class="text-sm font-medium text-gray-900 text-right">CRM v4.0+</div>
+                        </div>
+
+                        <!-- Row 5 -->
+                        <div class="grid grid-cols-2 px-5 py-4 border-b border-gray-200 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Last Updated</div>
+                            <div class="text-sm font-medium text-gray-900 text-right">12/12/2024</div>
+                        </div>
+
+                        <!-- Row 6 -->
+                        <div class="grid grid-cols-2 px-5 py-4 last:border-b-0">
+                            <div class="text-sm text-gray-500 font-medium">Created By</div>
+                            <div class="text-sm font-medium text-gray-900 text-right">System Administrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="w-1/3 px-6">
+                <!-- Permission Requirements -->
+                <div>
+                    <h3 class="mb-3 text-lg font-semibold text-gray-900">Permission Requirements</h3>
+
+                    <ul class="mb-3 flex flex-col gap-4 text-sm border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <li class="flex items-center gap-3 text-gray-500">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                                    fill="#22C55E" />
+                            </svg>
+
+                            Access to Users
+                        </li>
+
+                        <li class="flex items-center gap-3 text-gray-500">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                                    fill="#22C55E" />
+                            </svg>
+
+                            Access to Projects
+                        </li>
+
+                        <li class="flex items-center gap-3 text-gray-500">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                                    fill="#22C55E" />
+                            </svg>
+
+                            Access to Database
+                        </li>
+
+                        <li class="flex items-center gap-3 text-gray-500">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                                    fill="#22C55E" />
+                            </svg>
+
+                            Storage permission
+                        </li>
+
+                        <li class="flex items-center gap-3 text-gray-500">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                                    fill="#22C55E" />
+                            </svg>
+
+                            Activity logging enabled
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Warning Box -->
+                <div role="alert" class="p-5 bg-orange-50 border border-orange-200 rounded-xl shadow-sm">
+                    <div class="flex items-start gap-3 text-sm text-orange-800">
+                        <svg width="40" height="24" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.99885 0C8.4426 0 8.85197 0.234375 9.07697 0.61875L15.827 12.1187C16.0551 12.5062 16.0551 12.9844 15.8332 13.3719C15.6113 13.7594 15.1957 14 14.7488 14H1.24885C0.801972 14 0.386347 13.7594 0.164472 13.3719C-0.0574034 12.9844 -0.0542784 12.5031 0.170722 12.1187L6.92072 0.61875C7.14572 0.234375 7.5551 0 7.99885 0ZM7.99885 4C7.58322 4 7.24885 4.33437 7.24885 4.75V8.25C7.24885 8.66562 7.58322 9 7.99885 9C8.41447 9 8.74885 8.66562 8.74885 8.25V4.75C8.74885 4.33437 8.41447 4 7.99885 4ZM8.99885 11C8.99885 10.7348 8.89349 10.4804 8.70595 10.2929C8.51842 10.1054 8.26406 10 7.99885 10C7.73363 10 7.47928 10.1054 7.29174 10.2929C7.1042 10.4804 6.99885 10.7348 6.99885 11C6.99885 11.2652 7.1042 11.5196 7.29174 11.7071C7.47928 11.8946 7.73363 12 7.99885 12C8.26406 12 8.51842 11.8946 8.70595 11.7071C8.89349 11.5196 8.99885 11.2652 8.99885 11Z"
+                                fill="#FB923C" />
+                        </svg>
+
+                        <p class="text-orange-400 leading-relaxed">
+                            This module may modify system settings and create new database tables.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex items-center justify-center gap-3 p-3 mt-5 border border-gray-200 rounded-lg text-gray-500 font-semibold text-sm">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="shrink-0">
+                        <path
+                            d="M2.34375 2.34375L1.28125 1.28125C0.809375 0.809375 0 1.14375 0 1.80938V5.25C0 5.66563 0.334375 6 0.75 6H4.19063C4.85938 6 5.19375 5.19063 4.72188 4.71875L3.75938 3.75625C4.84375 2.67188 6.34375 2 8 2C11.3125 2 14 4.6875 14 8C14 11.3125 11.3125 14 8 14C6.725 14 5.54375 13.6031 4.57188 12.925C4.11875 12.6094 3.49687 12.7188 3.17812 13.1719C2.85938 13.625 2.97187 14.2469 3.425 14.5656C4.725 15.4688 6.30312 16 8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C5.79063 0 3.79063 0.896875 2.34375 2.34375ZM8 4C7.58437 4 7.25 4.33437 7.25 4.75V8C7.25 8.2 7.32812 8.39062 7.46875 8.53125L9.71875 10.7812C10.0125 11.075 10.4875 11.075 10.7781 10.7812C11.0687 10.4875 11.0719 10.0125 10.7781 9.72188L8.74687 7.69063V4.75C8.74687 4.33437 8.4125 4 7.99687 4H8Z"
+                            fill="#6B7280" />
+                    </svg>
+                    <span>What's New in Version 1.4.2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
