@@ -10,23 +10,9 @@
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <style>
-      .input-error {
-        @apply border-red-500 focus:border-red-500 focus:ring-red-500;
-      }
-
-      /* .error-text {
-        @apply text-red-600 text-sm mt-1;
-      } */
-      /* .required:after {
-        content: " *";
-        @apply text-red-500;
-      } */
-    </style>
   </head>
 
-  <body class="bg-gray-50 min-h-screen pb-32">
+  <body class="bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto p-6 sm:p-8 lg:p-10 mt-8">
       <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
         Payment Method Details
@@ -35,402 +21,245 @@
         Enter your card information to add a new payment method to your account.
       </p>
 
-      <form id="payment-form" class="space-y-8">
+      <!-- Form -->
+      <form id="paymentForm">
         <!-- Card Information -->
-        <section
-          class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
-        >
-          <div class="p-6 sm:p-7">
-            <h3 class="text-xl font-semibold text-gray-800 mb-6">
-              Card Information
-            </h3>
+        <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800">Card Information</h3>
 
-            <div class="grid grid-cols-1 gap-6">
-              <!-- Name + Card Number -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Name on Card <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="e.g. Ahmed Ali"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="name-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
+          <div class="grid sm:grid-cols-2 gap-5 mt-5">
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Name on Card <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="e.g. Ahmed Ali"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none uppercase"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
 
-                <div>
-                  <label
-                    for="cardNumber"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Card Number <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="cardNumber"
-                    name="cardNumber"
-                    maxlength="19"
-                    placeholder="4242 4242 4242 4242"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 font-mono tracking-wide focus:outline-none transition-all"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="cardNumber-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
-              </div>
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Card Number <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="cardNumber"
+                maxlength="19"
+                placeholder="4242 4242 4242 4242"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none uppercase"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
 
-              <!-- Expiry + CVV -->
-              <div class="grid grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="expiry"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Expiry Date <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="expiry"
-                    name="expiry"
-                    placeholder="MM/YY"
-                    maxlength="5"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all font-mono"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="expiry-error"
-                  >
-                    Must choose date to proceed further
-                  </p>
-                </div>
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Expiry Date <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                name="expiry"
+                maxlength="5"
+                placeholder="MM/YY"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none uppercase"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
 
-                <div>
-                  <label
-                    for="cvv"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    CVV <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="cvv"
-                    name="cvv"
-                    maxlength="4"
-                    placeholder="123"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all font-mono"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="cvv-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
-              </div>
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                CVV <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                name="cvv"
+                maxlength="4"
+                placeholder="123"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none uppercase"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
             </div>
           </div>
-        </section>
+        </div>
 
         <!-- Billing Address -->
-        <section
-          class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+        <div
+          class="bg-white border border-gray-200 rounded-xl shadow-lg p-6 mt-5"
         >
-          <div class="p-6 sm:p-7">
-            <h3 class="text-xl font-semibold text-gray-800 mb-6">
-              Billing Address
-            </h3>
+          <h3 class="text-xl font-semibold text-gray-800">Billing Address</h3>
 
-            <div class="grid grid-cols-1 gap-6">
-              <!-- Company Name + Address Line 1 -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="company"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Company Name <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    placeholder="e.g. Creation Next, Nestlé"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="company-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
-
-                <div>
-                  <label
-                    for="address1"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Address Line 1 <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="address1"
-                    name="address1"
-                    placeholder="e.g. 49 Featherstone Street, London"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="address1-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
-              </div>
-
-              <!-- City + Province -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="city"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    City <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="Enter your city name"
-                    class="mt-1.5 block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all"
-                  />
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="city-error"
-                  >
-                    Must choose Date to proceed further
-                  </p>
-                </div>
-
-                <div>
-                  <label
-                    for="province"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Province <span class="text-red-500">*</span>
-                  </label>
-
-                  <div class="relative mt-1.5">
-                    <select
-                      id="province"
-                      name="province"
-                      class="block w-full rounded-lg border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 pr-10 appearance-none focus:outline-none transition-all cursor-pointer bg-white"
-                    >
-                      <option value="">Select Province</option>
-                      <option>Punjab</option>
-                      <option>Sindh</option>
-                      <option>KPK</option>
-                      <option>Balochistan</option>
-                      <option>Islamabad Capital Territory</option>
-                    </select>
-
-                    <!-- Custom Arrow -->
-                    <svg
-                      class="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="province-error"
-                  >
-                    Must select province to proceed further
-                  </p>
-                </div>
-              </div>
-
-              <!-- Country + ZIP / Postal Code -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="country"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Country <span class="text-red-500">*</span>
-                  </label>
-
-                  <div class="relative mt-1.5">
-                    <select
-                      id="country"
-                      name="country"
-                      class="block w-full rounded-xl border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 pr-10 appearance-none focus:outline-none transition-all cursor-pointer bg-white text-gray-900 placeholder:text-gray-400"
-                    >
-                      <option value="" disabled selected class="text-gray-400">
-                        Select Country
-                      </option>
-                      <option>Pakistan</option>
-                      <option>United Kingdom</option>
-                      <option>United States</option>
-                      <option>Canada</option>
-                      <option>India</option>
-                    </select>
-
-                    <!-- Custom Arrow -->
-                    <svg
-                      class="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <!-- Yeh error p tag ab relative div ke BAHAR hai -->
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="country-error"
-                  >
-                    Must choose Date to proceed further
-                  </p>
-                </div>
-
-                <div>
-                  <label
-                    for="zip"
-                    class="block text-sm font-medium text-gray-700 required"
-                  >
-                    Postal / ZIP Code <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="zip"
-                    name="zip"
-                    placeholder="Enter ZIP / Postal code"
-                    class="mt-1.5 block w-full rounded-xl border border-gray-300 shadow-sm sm:text-sm px-4 py-2.5 focus:outline-none transition-all"
-                  />
-
-                  <!-- Yeh error p tag input ke direct baad hai -->
-                  <p
-                    class="error-text text-sm text-red-500 hidden mt-1"
-                    id="zip-error"
-                  >
-                    Must fill this field to proceed further
-                  </p>
-                </div>
-              </div>
+          <div class="grid sm:grid-cols-2 gap-6 mt-6">
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Company Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="company"
+                placeholder="e.g. Creation Next, Nestlé"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
             </div>
-          </div>
-        </section>
 
-        <!-- Default & Security -->
-        <section class="space-y-6">
-          <!-- Default Payment Method -->
-          <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
-            <div class="flex items-start gap-4 cursor-pointer group">
-              <!-- Star SVG on left -->
-              <svg
-                width="17"
-                height="16"
-                viewBox="0 0 17 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="shrink-0 mt-1"
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Address Line 1 <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="address1"
+                placeholder="e.g. 49 Featherstone Street"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
+
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                City <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="city"
+                placeholder="Enter your city name"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
+
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Province <span class="text-red-500">*</span>
+              </label>
+              <select
+                name="province"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
               >
-                <path
-                  d="M9.14864 0.5625C8.98301 0.21875 8.63301 0 8.24864 0C7.86426 0 7.51739 0.21875 7.34864 0.5625L5.33926 4.69688L0.851764 5.35938C0.476764 5.41563 0.164264 5.67812 0.0486389 6.0375C-0.0669861 6.39687 0.0267638 6.79375 0.295514 7.05937L3.55176 10.2812L2.78301 14.8344C2.72051 15.2094 2.87676 15.5906 3.18614 15.8125C3.49551 16.0344 3.90489 16.0625 4.24239 15.8844L8.25176 13.7437L12.2611 15.8844C12.5986 16.0625 13.008 16.0375 13.3174 15.8125C13.6268 15.5875 13.783 15.2094 13.7205 14.8344L12.9486 10.2812L16.2049 7.05937C16.4736 6.79375 16.5705 6.39687 16.4518 6.0375C16.333 5.67812 16.0236 5.41563 15.6486 5.35938L11.158 4.69688L9.14864 0.5625Z"
-                  fill="#9CA3AF"
-                />
-              </svg>
-
-              <!-- Texts on right -->
-              <div class="flex-1">
-                <div
-                  class="text-base font-medium text-gray-900 group-hover:text-indigo-700 transition-colors"
-                >
-                  Make this my default payment method
-                </div>
-                <p class="mt-1.5 text-sm text-gray-600 leading-relaxed">
-                  All future charges will be made to this card
-                </p>
-              </div>
+                <option value="">Select Province</option>
+                <option>Punjab</option>
+                <option>Sindh</option>
+                <option>KPK</option>
+                <option>Balochistan</option>
+                <option>Islamabad Capital Territory</option>
+              </select>
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
             </div>
-          </div>
 
-          <!-- Secure Payment Notice -->
-          <div
-            class="bg-gray-50 p-5 sm:p-6 rounded-xl border border-gray-200 shadow-sm transition-all duration-200 hover:shadow hover:bg-gray-100/70"
-          >
-            <div class="flex items-start gap-4">
-              <svg
-                class="w-5 h-5 text-blue-600 shrink-0 mt-0.5 transition-transform"
-                viewBox="0 0 17 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Country <span class="text-red-500">*</span>
+              </label>
+              <select
+                name="country"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
               >
-                <path
-                  d="M8.43752 0C8.59923 0 8.76095 0.0351563 8.90861 0.101953L15.5285 2.91094C16.302 3.23789 16.8785 4.00078 16.875 4.92188C16.8574 8.40938 15.4231 14.7902 9.36564 17.6906C8.77853 17.9719 8.0965 17.9719 7.50939 17.6906C1.45197 14.7902 0.0175941 8.40938 1.59908e-05 4.92188C-0.00349963 4.00078 0.573063 3.23789 1.3465 2.91094L7.96994 0.101953C8.11408 0.0351563 8.2758 0 8.43752 0ZM8.43752 2.34844V15.6375C13.2891 13.2891 14.5934 8.08945 14.625 4.97109L8.43752 2.34844Z"
-                  fill="currentColor"
-                />
-              </svg>
+                <option value="">Select Country</option>
+                <option>Pakistan</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>India</option>
+              </select>
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
+            </div>
 
-              <div class="flex-1">
-                <h4
-                  class="text-base font-semibold text-blue-700 tracking-tight mb-1.5 group-hover:text-blue-800 transition-colors"
-                >
-                  Secure Payment -
-                  <span class="text-sm text-blue-400 leading-relaxed">
-                    Your card details are encrypted and never stored directly on
-                    our servers. We use industry-standard PCI DSS compliance to
-                    protect your information.
-                  </span>
-                </h4>
-              </div>
+            <div class="relative">
+              <label class="text-sm font-medium text-gray-700">
+                Postal / ZIP Code <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="zip"
+                placeholder="Enter ZIP / Postal code"
+                class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+              />
+              <span
+                class="error-msg absolute left-0 top-full text-sm text-red-500 hidden"
+              ></span>
             </div>
           </div>
-        </section>
+        </div>
       </form>
+
+      <!-- Default Payment Method -->
+      <div
+        class="p-5 mt-6 bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <div class="flex items-start gap-4 cursor-pointer">
+          <!-- Star Icon -->
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path
+              d="M9.14864 0.5625C8.98301 0.21875 8.63301 0 8.24864 0C7.86426 0 7.51739 0.21875 7.34864 0.5625L5.33926 4.69688L0.851764 5.35938C0.476764 5.41563 0.164264 5.67812 0.0486389 6.0375C-0.0669861 6.39687 0.0267638 6.79375 0.295514 7.05937L3.55176 10.2812L2.78301 14.8344C2.72051 15.2094 2.87676 15.5906 3.18614 15.8125C3.49551 16.0344 3.90489 16.0625 4.24239 15.8844L8.25176 13.7437L12.2611 15.8844C12.5986 16.0625 13.008 16.0375 13.3174 15.8125C13.6268 15.5875 13.783 15.2094 13.7205 14.8344L12.9486 10.2812L16.2049 7.05937C16.4736 6.79375 16.5705 6.39687 16.4518 6.0375C16.333 5.67812 16.0236 5.41563 15.6486 5.35938L11.158 4.69688L9.14864 0.5625Z"
+              fill="#9CA3AF"
+            />
+          </svg>
+
+          <!-- Text -->
+          <div>
+            <div class="text-base font-medium text-gray-900">
+              Make this my default payment method
+            </div>
+
+            <p class="text-sm text-red-400">
+              All future charges will be made to this card
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secure Payment Notice -->
+      <div
+        class="p-6 mt-6 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
+      >
+        <div class="flex items-start gap-4">
+          <!-- Security Icon -->
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 17 18" fill="none">
+            <path
+              d="M8.43752 0C8.59923 0 8.76095 0.0351563 8.90861 0.101953L15.5285 2.91094C16.302 3.23789 16.8785 4.00078 16.875 4.92188C16.8574 8.40938 15.4231 14.7902 9.36564 17.6906C8.77853 17.9719 8.0965 17.9719 7.50939 17.6906C1.45197 14.7902 0.0175941 8.40938 1.59908e-05 4.92188C-0.00349963 4.00078 0.573063 3.23789 1.3465 2.91094L7.96994 0.101953C8.11408 0.0351563 8.2758 0 8.43752 0ZM8.43752 2.34844V15.6375C13.2891 13.2891 14.5934 8.08945 14.625 4.97109L8.43752 2.34844Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <!-- Text -->
+          <div>
+            <div class="text-base text-blue-500">
+              <strong> Secure Payment</strong> - Your card details are encrypted
+              and never stored directly on our servers. We use industry-standard
+              PCI DSS compliance to protect your information.
+            </div>
+
+            <p class="text-sm text-blue-400"></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ============================= -->
     <!-- Fixed Bottom Action Bar -->
     <!-- ============================= -->
-    <div
-      class="fixed bottom-0 left-0 right-0 w-full bg-white border-t border-gray-200 shadow-lg z-50"
-    >
+    <div class="w-full bg-white border-t border-gray-200 shadow-lg z-50">
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
       >
@@ -461,7 +290,7 @@
         <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-3">
           <button
             type="button"
-            class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-indigo-300 bg-indigo-50 text-indigo-600 font-medium hover:bg-indigo-100 transition-all inline-flex items-center justify-center gap-2"
+            class="w-full sm:w-auto px-5 py-3 rounded-lg border border-indigo-300 bg-indigo-50 text-indigo-600 font-medium hover:bg-indigo-100 transition-all inline-flex items-center justify-center gap-2"
           >
             <!-- SVG Icon -->
             <svg
@@ -487,15 +316,15 @@
 
           <button
             type="button"
-            class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-all"
+            class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-all"
           >
             Cancel
           </button>
 
           <button
             type="submit"
-            form="payment-form"
-            class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-indigo-500 text-white font-medium shadow-sm hover:bg-indigo-700 transition-all inline-flex items-center justify-center gap-2"
+            form="paymentForm"
+            class="w-full sm:w-auto px-5 py-3 rounded-lg bg-indigo-500 text-white font-medium shadow-sm hover:bg-indigo-700 transition-all inline-flex items-center justify-center gap-2"
           >
             <!-- SVG Icon -->
             <svg
@@ -520,144 +349,55 @@
 
     <script>
       $(document).ready(function () {
-        // Card number formatting
-        $("#cardNumber").on("input", function () {
-          let val = $(this)
-            .val()
-            .replace(/\D/g, "")
-            .match(/.{1,4}/g);
-          $(this).val(val ? val.join(" ") : "");
-        });
-
-        // Expiry formatting MM/YY
-        $("#expiry").on("input", function () {
-          let val = $(this).val().replace(/\D/g, "");
-          if (val.length > 2) val = val.slice(0, 2) + "/" + val.slice(2, 4);
-          $(this).val(val);
-        });
-
-        // Form submit validation
-        $("#payment-form").on("submit", function (e) {
-          e.preventDefault();
-
+        $("#paymentForm").on("submit", function (e) {
+          e.preventDefault(); // page reload stop
           let isValid = true;
-          $(".error-text").addClass("hidden").text(""); // sab errors hide aur clear kar do
 
-          // Required fields list
-          const required = [
-            "name",
-            "cardNumber",
-            "expiry",
-            "cvv",
-            "company",
-            "address1",
-            "city",
-            "province",
-            "country",
-            "zip",
-          ];
+          // loop through all inputs and selects
+          $("#paymentForm input, #paymentForm select").each(function () {
+            let field = $(this);
+            let error = field.next(".error-msg");
 
-          required.forEach((id) => {
-            const $el = $("#" + id);
-            const $err = $("#" + id + "-error");
+            if ($.trim(field.val()) === "") {
+              error.text("Must fill this field to proceed further");
+              error.removeClass("hidden");
 
-            if (!$el.length || !$err.length) {
-              console.warn(`Field or error not found for: ${id}`);
-              return;
-            }
-
-            const val = $el.val()?.trim() || "";
-
-            if (!val) {
-              $el.addClass("input-error");
-              $err
-                .text("Must fill this field to proceed further")
-                .removeClass("hidden");
               isValid = false;
             } else {
-              $el.removeClass("input-error");
-              $err.addClass("hidden");
+              error.addClass("hidden");
+              error.text("");
             }
           });
 
-          // Extra validations (card, cvv, expiry)
-          const cardDigits = $("#cardNumber").val().replace(/\D/g, "");
-          if (cardDigits.length < 15 || cardDigits.length > 19) {
-            $("#cardNumber").addClass("input-error");
-            $("#cardNumber-error")
-              .text("Must fill this field to proceed further")
-              .removeClass("hidden");
-            isValid = false;
-          }
-
-          const cvvVal = $("#cvv").val().trim();
-          if (cvvVal.length < 3 || cvvVal.length > 4) {
-            $("#cvv").addClass("input-error");
-            $("#cvv-error")
-              .text("Must fill this field to proceed further")
-              .removeClass("hidden");
-            isValid = false;
-          }
-
-          const expiryVal = $("#expiry").val().trim();
-          if (expiryVal.length !== 5 || !expiryVal.includes("/")) {
-            $("#expiry").addClass("input-error");
-            $("#expiry-error")
-              .text("Must choose Date to proceed further")
-              .removeClass("hidden");
-            isValid = false;
-          }
-
+          // if valid
           if (isValid) {
-            alert("Form submitted successfully! (demo)");
-          } else {
-            const firstError = $(".input-error").first();
-            if (firstError.length) {
-              firstError[0].scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-              });
-            }
+            alert("Form submitted successfully");
+
+            $("#paymentForm")[0].reset();
+
+            $(".error-msg").addClass("hidden").text("");
           }
         });
 
-        // Real-time validation (har key press/change pe error check & remove)
-        $("input, select").on("input change", function () {
-          const $this = $(this);
-          const id = $this.attr("id");
-          if (!id) return;
+        // remove error while typing
+        $("#paymentForm input").on("input", function () {
+          let field = $(this);
+          let error = field.next(".error-msg");
 
-          const $err = $("#" + id + "-error");
-
-          const val = $this.val().trim();
-
-          if (val) {
-            $this.removeClass("input-error");
-            if ($err.length) $err.addClass("hidden");
+          if ($.trim(field.val()) !== "") {
+            error.addClass("hidden");
+            error.text("");
           }
+        });
 
-          // Extra real-time checks for card, cvv, expiry
-          if (id === "cardNumber") {
-            const digits = val.replace(/\D/g, "");
-            if (digits.length >= 15 && digits.length <= 19) {
-              $this.removeClass("input-error");
-              $("#cardNumber-error").addClass("hidden");
-            }
-          }
+        // remove error on select change
+        $("#paymentForm select").on("change", function () {
+          let field = $(this);
+          let error = field.next(".error-msg");
 
-          if (id === "cvv") {
-            const len = val.length;
-            if (len >= 3 && len <= 4) {
-              $this.removeClass("input-error");
-              $("#cvv-error").addClass("hidden");
-            }
-          }
-
-          if (id === "expiry") {
-            if (val.length === 5 && val.includes("/")) {
-              $this.removeClass("input-error");
-              $("#expiry-error").addClass("hidden");
-            }
+          if (field.val() !== "") {
+            error.addClass("hidden");
+            error.text("");
           }
         });
       });
