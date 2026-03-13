@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <div class="max-w-6xl mx-auto p-6">
+      <!-- Payment Overview -->
+      <div class="p-6 bg-white border border-gray-200 rounded-lg">
+        <h2 class="font-semibold text-lg text-gray-800">Payment Overview</h2>
+
+        <div class="grid grid-cols-3 text-sm text-gray-600 mt-4">
+          <div>
+            <p class="text-gray-500">Active Payment Method</p>
+            <p class="flex items-center gap-2 font-medium text-gray-800">
+              <svg
+                width="21"
+                height="17"
+                viewBox="0 0 21 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.8877 7.15956C16.8877 7.15956 17.1607 8.49592 17.2218 8.77612H16.0219C16.1405 8.4564 16.5967 7.21345 16.5967 7.21345C16.5895 7.22423 16.7152 6.88654 16.7871 6.67819L16.8877 7.15956ZM20.692 1.72433V14.3694C20.692 15.3214 19.9196 16.0938 18.9676 16.0938H1.72433C0.772356 16.0938 0 15.3214 0 14.3694V1.72433C0 0.772356 0.772356 0 1.72433 0H18.9676C19.9196 0 20.692 0.772356 20.692 1.72433ZM5.47834 10.7483L7.74871 5.17299H6.22196L4.81016 8.98089L4.65569 8.20853L4.15276 5.64359C4.07014 5.28795 3.81508 5.18736 3.49895 5.17299H1.1747L1.14955 5.28435C1.71715 5.42805 2.22367 5.6364 2.66553 5.89865L3.95159 10.7483H5.47834ZM8.86952 10.7555L9.7748 5.17299H8.33067L7.42899 10.7555H8.86952ZM13.8952 8.93059C13.9024 8.29475 13.5144 7.80978 12.6846 7.41103C12.1781 7.15597 11.8691 6.98354 11.8691 6.7213C11.8763 6.4842 12.1314 6.23992 12.699 6.23992C13.1696 6.22914 13.5144 6.34051 13.7731 6.45187L13.9024 6.51294L14.1 5.30591C13.8162 5.19454 13.3636 5.06881 12.8067 5.06881C11.3806 5.06881 10.3783 5.83039 10.3711 6.91528C10.3604 7.71638 11.0896 8.16183 11.6356 8.43126C12.1925 8.70428 12.3828 8.88389 12.3828 9.12458C12.3757 9.49819 11.9302 9.67062 11.5171 9.67062C10.9423 9.67062 10.6334 9.58081 10.1628 9.37245L9.97238 9.28264L9.77121 10.5364C10.1089 10.6908 10.734 10.8274 11.3806 10.8345C12.8966 10.8381 13.8845 10.0873 13.8952 8.93059ZM18.9676 10.7555L17.8037 5.17299H16.6865C16.3416 5.17299 16.0794 5.27358 15.9321 5.6364L13.7875 10.7555H15.3034C15.3034 10.7555 15.5513 10.0658 15.6052 9.91849H17.4588C17.502 10.1161 17.6313 10.7555 17.6313 10.7555H18.9676Z"
+                  fill="#3B82F6"
+                />
+              </svg>
+
+              Card ending ****1234
+            </p>
+          </div>
+
+          <div>
+            <p class="text-gray-500">Next Billing Date</p>
+            <p class="font-medium text-gray-800">April 15, 2024</p>
+          </div>
+
+          <div>
+            <p class="text-gray-500">Last Payment</p>
+            <p class="font-medium text-gray-800">$149.00 on Mar 15, 2024</p>
+          </div>
+        </div>
+
+        <span
+          class="inline-flex items-center gap-2 px-3 py-1 mt-4 text-xs rounded-full text-green-500 bg-emerald-50"
+        >
+          <svg
+            width="8"
+            height="8"
+            viewBox="0 0 8 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.67871 0C5.71027 7.53757e-05 7.35742 1.64714 7.35742 3.67871C7.35735 5.71022 5.71022 7.35735 3.67871 7.35742C1.64714 7.35742 7.53761e-05 5.71027 0 3.67871C0 1.64709 1.64709 0 3.67871 0Z"
+              fill="#22C55E"
+            />
+            <path
+              d="M3.67871 0C5.71027 7.53757e-05 7.35742 1.64714 7.35742 3.67871C7.35735 5.71022 5.71022 7.35735 3.67871 7.35742C1.64714 7.35742 7.53761e-05 5.71027 0 3.67871C0 1.64709 1.64709 0 3.67871 0Z"
+              stroke="#E5E7EB"
+            />
+          </svg>
+
+          Auto-renew enabled
+        </span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-6 mt-6">
+        <!-- Left: Complete Payment -->
+        <div class="flex-1 p-6 self-start bg-white border border-gray-200 rounded-lg">
+          <h2 class="font-semibold text-lg text-gray-800">Complete Payment</h2>
+
+          <p class="text-sm text-gray-600 mt-4">Select Payment Method</p>
+
+          <div class="flex flex-col gap-3 mt-2">
+            <!-- Option 1 - Default checked -->
+            <label
+              class="group flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer has-checked:border-blue-500 has-checked:bg-blue-50 transition-all duration-200 shadow-sm"
+            >
+              <input
+                type="radio"
+                name="card"
+                value="default"
+                checked
+                class="mr-3 w-4 h-4 rounded-full border-2 border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none appearance-none cursor-pointer"
+              />
+              <span class="text-gray-700 group-has-checked:text-blue-800">
+                Use Default Card (****1234)
+              </span>
+            </label>
+
+            <!-- Option 2 -->
+            <label
+              class="group flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer has-checked:border-blue-500 has-checked:bg-blue-50 transition-all duration-200 shadow-sm"
+            >
+              <input
+                type="radio"
+                name="card"
+                value="other"
+                class="mr-3 w-4 h-4 rounded-full border-2 border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none appearance-none cursor-pointer"
+              />
+              <span class="text-gray-700 group-has-checked:text-blue-800">
+                Use Other Card (****5678)
+              </span>
+            </label>
+
+            <!-- Add New Card Button -->
+            <button
+              type="button"
+              class="flex items-center justify-center gap-3 p-3 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer shadow-sm"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.89732 0.919643C6.89732 0.410965 6.48636 0 5.97768 0C5.469 0 5.05804 0.410965 5.05804 0.919643V5.05804H0.919643C0.410965 5.05804 0 5.469 0 5.97768C0 6.48636 0.410965 6.89732 0.919643 6.89732H5.05804V11.0357C5.05804 11.5444 5.469 11.9554 5.97768 11.9554C6.48636 11.9554 6.89732 11.5444 6.89732 11.0357V6.89732H11.0357C11.5444 6.89732 11.9554 6.48636 11.9554 5.97768C11.9554 5.469 11.5444 5.05804 11.0357 5.05804H6.89732V0.919643Z"
+                  fill="#1F2937"
+                />
+              </svg>
+              <span>Add New Card</span>
+            </button>
+          </div>
+
+          <!-- Security note -->
+          <div
+            class="flex items-center gap-3 mt-4 px-4 py-3 text-sm text-gray-600 bg-blue-50 border border-gray-200 rounded-lg shadow-sm"
+          >
+            <svg
+              width="14"
+              height="15"
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.89734 0C7.02953 0 7.16173 0.0287388 7.28244 0.0833426L12.694 2.37958C13.3262 2.64685 13.7975 3.27048 13.7947 4.02344C13.7803 6.87433 12.6077 12.0904 7.65604 14.4614C7.1761 14.6913 6.61857 14.6913 6.13863 14.4614C1.18693 12.0904 0.0143825 6.87433 1.30718e-05 4.02344C-0.00286081 3.27048 0.468456 2.64685 1.10071 2.37958L6.51511 0.0833426C6.63294 0.0287388 6.76514 0 6.89734 0ZM6.89734 1.91975V12.783C10.8633 10.8633 11.9295 6.61281 11.9554 4.06367L6.89734 1.91975Z"
+                fill="#22C55E"
+              />
+            </svg>
+            <span>Your information is encrypted and secure</span>
+          </div>
+
+          <!-- Complete Payment Button -->
+          <button
+          type="button"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg p-3 mt-4 flex items-center justify-center gap-3 cursor-pointer"
+          >
+            <svg
+              width="17"
+              height="13"
+              viewBox="0 0 17 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.60417 0C1.9135 0 1.25112 0.274367 0.762743 0.762743C0.274367 1.25112 0 1.9135 0 2.60417V3.95833H16.6667V2.60417C16.6667 1.9135 16.3923 1.25112 15.9039 0.762743C15.4155 0.274367 14.7532 0 14.0625 0H2.60417ZM0 9.89583V5H16.6667V9.89583C16.6667 10.5865 16.3923 11.2489 15.9039 11.7373C15.4155 12.2256 14.7532 12.5 14.0625 12.5H2.60417C1.9135 12.5 1.25112 12.2256 0.762743 11.7373C0.274367 11.2489 0 10.5865 0 9.89583ZM11.3542 8.54167C11.216 8.54167 11.0836 8.59654 10.9859 8.69421C10.8882 8.79189 10.8333 8.92437 10.8333 9.0625C10.8333 9.20063 10.8882 9.33311 10.9859 9.43079C11.0836 9.52846 11.216 9.58333 11.3542 9.58333H13.6458C13.784 9.58333 13.9164 9.52846 14.0141 9.43079C14.1118 9.33311 14.1667 9.20063 14.1667 9.0625C14.1667 8.92437 14.1118 8.79189 14.0141 8.69421C13.9164 8.59654 13.784 8.54167 13.6458 8.54167H11.3542Z"
+                fill="white"
+              />
+            </svg>
+            <span>Complete Payment</span>
+          </button>
+        </div>
+
+        <!-- Right: Order Summary + Billing Address -->
+        <div class="flex-1 flex flex-col gap-6">
+          <!-- Order Summary -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h2 class="font-semibold text-lg text-gray-800">Order Summary</h2>
+
+            <div class="mt-4 flex flex-col gap-2 text-sm text-gray-600">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Premium Plan</span>
+                <span class="font-medium text-gray-800">$149.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Billing Cycle</span>
+                <span class="font-medium text-gray-800">Monthly</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Tax (8%)</span>
+                <span class="font-medium text-gray-800">$11.92</span>
+              </div>
+            </div>
+
+            <div
+              class="pt-3 flex justify-between font-semibold mt-4 border-t border-gray-200 text-gray-800"
+            >
+              <span>Total Due</span>
+              <span>$160.92</span>
+            </div>
+
+            <div class="mt-4 bg-gray-100 p-3 rounded text-sm">
+              <p class="text-gray-500">Next Renewal Date</p>
+              <p class="font-medium">April 15, 2024</p>
+            </div>
+
+            <!-- Auto-Renew -->
+            <div
+              class="flex items-center justify-between mt-5 p-3 text-sm bg-gray-100 rounded-lg"
+            >
+              <div class="flex items-center gap-3">
+                <svg
+                  width="14"
+                  height="13"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.64696 3.18824C5.43451 1.40069 8.32277 1.39206 10.1218 3.1595L8.93778 4.34067C8.73948 4.53897 8.682 4.83498 8.78834 5.09363C8.89467 5.35228 9.14757 5.51896 9.42634 5.51896H12.8606H13.1049C13.4871 5.51896 13.7946 5.21146 13.7946 4.82923V1.15066C13.7946 0.871891 13.628 0.618989 13.3693 0.512655C13.1107 0.406322 12.8146 0.463799 12.6164 0.662097L11.4208 1.85763C8.90329 -0.628277 4.84824 -0.619655 2.34509 1.88637C1.64386 2.5876 1.13806 3.4124 0.827679 4.29469C0.658119 4.77462 0.911021 5.29767 1.38809 5.46723C1.86515 5.63679 2.39107 5.38389 2.56063 4.90682C2.78192 4.28032 3.14116 3.69117 3.64696 3.18824ZM0 8.04798V8.26639V8.28651V11.7266C0 12.0053 0.166685 12.2582 0.425335 12.3646C0.683984 12.4709 0.979994 12.4134 1.17829 12.2151L2.37383 11.0196C4.89135 13.5055 8.9464 13.4969 11.4496 10.9908C12.1508 10.2896 12.6595 9.4648 12.9698 8.5854C13.1394 8.10546 12.8865 7.58241 12.4094 7.41285C11.9324 7.24329 11.4064 7.49619 11.2369 7.97326C11.0156 8.59976 10.6564 9.18891 10.1506 9.69184C8.363 11.4794 5.47475 11.488 3.6757 9.72058L4.85686 8.53654C5.05516 8.33824 5.11264 8.04223 5.00631 7.78358C4.89997 7.52493 4.64707 7.35825 4.3683 7.35825H0.931138H0.911021H0.689732C0.307506 7.35825 0 7.66575 0 8.04798Z"
+                    fill="#1F2937"
+                  />
+                </svg>
+                <span class="font-medium text-gray-700">Auto-Renew</span>
+              </div>
+
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" checked class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-5"
+                ></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Billing Address -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="pt-4 text-sm text-gray-600">
+              <div class="flex justify-between font-medium text-gray-800">
+                <span>Billing Address</span>
+                <a href="#" class="text-blue-600">Edit</a>
+              </div>
+
+              <div class="mt-2 text-gray-500">
+                <p class="font-medium">Tech Solutions Inc.</p>
+                <p>123 Business Street</p>
+                <p>Suite 100</p>
+                <p>San Francisco, CA 94105</p>
+                <p>United States</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
