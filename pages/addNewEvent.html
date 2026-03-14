@@ -1,0 +1,1284 @@
+<div class="flex items-center space-x-4">
+  <h1 class="font-medium text-gray-500">Project Management</h1>
+  <svg
+    class="mt-1"
+    width="8"
+    height="16"
+    viewBox="0 0 8 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M7.5 16H0V0H7.5V16Z" stroke="" />
+    <g clip-path="url(#clip0_1_9135)">
+      <path
+        d="M7.28145 6.97012C7.57441 7.26309 7.57441 7.73887 7.28145 8.03184L2.78145 12.5318C2.48848 12.8248 2.0127 12.8248 1.71973 12.5318C1.42676 12.2389 1.42676 11.7631 1.71973 11.4701L5.69004 7.4998L1.72207 3.52949C1.4291 3.23652 1.4291 2.76074 1.72207 2.46777C2.01504 2.1748 2.49082 2.1748 2.78379 2.46777L7.28379 6.96777L7.28145 6.97012Z"
+        fill="#6B7280"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1_9135">
+        <path d="M0 1.5H7.5V13.5H0V1.5Z" fill="" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <p class="text-gray-500 font-medium">Projects</p>
+  <svg
+    class="mt-1"
+    width="8"
+    height="16"
+    viewBox="0 0 8 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M7.5 16H0V0H7.5V16Z" stroke="" />
+    <g clip-path="url(#clip0_1_9135)">
+      <path
+        d="M7.28145 6.97012C7.57441 7.26309 7.57441 7.73887 7.28145 8.03184L2.78145 12.5318C2.48848 12.8248 2.0127 12.8248 1.71973 12.5318C1.42676 12.2389 1.42676 11.7631 1.71973 11.4701L5.69004 7.4998L1.72207 3.52949C1.4291 3.23652 1.4291 2.76074 1.72207 2.46777C2.01504 2.1748 2.49082 2.1748 2.78379 2.46777L7.28379 6.96777L7.28145 6.97012Z"
+        fill="#6B7280"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1_9135">
+        <path d="M0 1.5H7.5V13.5H0V1.5Z" fill="" />
+      </clipPath>
+    </defs>
+  </svg>
+  <p class="text-blue-500 font-medium">Add New Event</p>
+</div>
+
+<!-- Form -->
+<form id="eventForm" class="mt-6">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <!-- Event Information-->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div class="p-3 bg-svg-blue rounded-lg">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_325_62289)">
+              <path
+                d="M10.0013 18.3307C14.6037 18.3307 18.3346 14.5998 18.3346 9.9974C18.3346 5.39502 14.6037 1.66406 10.0013 1.66406C5.39893 1.66406 1.66797 5.39502 1.66797 9.9974C1.66797 14.5998 5.39893 18.3307 10.0013 18.3307Z"
+                stroke="#3B82F6"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10 13.3333V10"
+                stroke="#3B82F6"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10 6.66406H10.0083"
+                stroke="#3B82F6"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_325_62289">
+                <rect width="20" height="20" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">Event Information</p>
+          <p class="text-base text-gray-400">Basic details about your event</p>
+        </div>
+      </div>
+
+      <!-- Event Title -->
+      <div class="mt-4 relative">
+        <label for="eventTitle" class="text-sm font-medium text-primary"
+          >Event Title
+          <span class="text-red-500">*</span>
+        </label>
+
+        <input
+          type="text"
+          name="eventTitle"
+          placeholder="Enter event here"
+          class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none"
+          autocomplete="off"
+        />
+
+        <span
+          class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+        ></span>
+      </div>
+
+      <!-- Description -->
+      <div class="mt-4 relative">
+        <label class="text-sm font-medium text-primary"> Description </label>
+        <textarea
+          type="text"
+          name="description"
+          placeholder="Describe your project"
+          rows="5"
+          class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+        ></textarea>
+      </div>
+
+      <!-- Event Type -->
+      <div class="grid grid-cols-2 gap-2">
+        <div class="mt-4 relative eventDropdown">
+          <label class="text-sm font-medium text-primary">
+            Event Type <span class="text-red-500">*</span>
+          </label>
+
+          <div class="relative">
+            <input
+              type="text"
+              name="eventType"
+              readonly
+              placeholder="Select event type"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+            />
+
+            <!-- Arrow -->
+            <svg
+              class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 eventDropdown-arrow"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+            >
+              <path
+                d="M5 7l4 4 4-4"
+                stroke="#9CA3AF"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+
+            <!-- eventDropdown list -->
+            <ul
+              class="absolute z-10 mt-1 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl eventDropdown-list"
+            >
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                Website
+              </li>
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                Mobile App
+              </li>
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                Dashboard
+              </li>
+            </ul>
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+        <div class="mt-4 relative eventDropdown">
+          <label class="text-sm font-medium text-primary">
+            Status <span class="text-red-500">*</span>
+          </label>
+
+          <div class="relative">
+            <input
+              type="text"
+              name="status"
+              readonly
+              placeholder="Select status"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+            />
+
+            <svg
+              class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 eventDropdown-arrow"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+            >
+              <path
+                d="M5 7l4 4 4-4"
+                stroke="#9CA3AF"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+
+            <ul
+              class="absolute z-10 mt-1 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl eventDropdown-list"
+            >
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                Pending
+              </li>
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                Completed
+              </li>
+              <li
+                class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+              >
+                In Progress
+              </li>
+            </ul>
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+      </div>
+
+      <!-- Related Project -->
+      <div class="mt-4 relative eventDropdown">
+        <label class="text-sm font-medium text-primary">
+          Related Project <span class="text-red-500">*</span>
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="projectOwner"
+            readonly
+            placeholder="Select project"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+          />
+
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 eventDropdown-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M5 7l4 4 4-4"
+              stroke="#9CA3AF"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+
+          <ul
+            class="absolute z-10 mt-1 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl eventDropdown-list"
+          >
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              Ali
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              Umer
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              Umair
+            </li>
+          </ul>
+        </div>
+        <span
+          class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+        ></span>
+      </div>
+
+      <!-- Related Task -->
+      <div class="mt-4 relative eventDropdown">
+        <label class="text-sm font-medium text-primary">
+          Related Task (Optional)
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="priority"
+            readonly
+            placeholder="Select related task"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+          />
+
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 eventDropdown-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M5 7l4 4 4-4"
+              stroke="#9CA3AF"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+          <ul
+            class="absolute z-10 mt-1 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl eventDropdown-list"
+          >
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              Medium
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              High
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              Low
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Date & Time -->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div class="p-3 bg-svg-blue rounded-lg">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.66797 1.66406V4.9974"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M13.332 1.66406V4.9974"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15.8333 3.33594H4.16667C3.24619 3.33594 2.5 4.08213 2.5 5.0026V16.6693C2.5 17.5897 3.24619 18.3359 4.16667 18.3359H15.8333C16.7538 18.3359 17.5 17.5897 17.5 16.6693V5.0026C17.5 4.08213 16.7538 3.33594 15.8333 3.33594Z"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2.5 8.33594H17.5"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">Date & Time</p>
+          <p class="text-base text-gray-400">Schedule your Event</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <!-- Start Date  -->
+        <div class="mt-4 relative">
+          <label for="start-date" class="block text-sm font-medium text-primary"
+            >Start Date <span class="text-red-500">*</span></label
+          >
+
+          <div class="relative">
+            <input
+              type="date"
+              name="start-date"
+              placeholder="MM/DD/YY"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none uppercase"
+            />
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+
+        <!-- End Time -->
+        <div class="mt-4 relative">
+          <label
+            for="start-time"
+            class="block text-sm font-medium text-primary"
+          >
+            End Time <span class="text-red-500">*</span>
+          </label>
+
+          <div class="relative">
+            <input
+              type="time"
+              name="start-time"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none uppercase"
+            />
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <!-- End Date  -->
+        <div class="mt-4 relative">
+          <label for="end-date" class="block text-sm font-medium text-primary"
+            >End Date <span class="text-red-500">*</span></label
+          >
+
+          <div class="relative">
+            <input
+              type="date"
+              name="end-date"
+              placeholder="MM/DD/YY"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none uppercase"
+            />
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+
+        <!-- End Time -->
+        <div class="mt-4 relative">
+          <label for="end-time" class="block text-sm font-medium text-primary">
+            End Time <span class="text-red-500">*</span>
+          </label>
+
+          <div class="relative">
+            <input
+              type="time"
+              name="end-time"
+              class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none uppercase"
+            />
+          </div>
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+      </div>
+
+      <!-- All Day Event -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33203 1.33594V4.0026"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.668 1.33594V4.0026"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.6667 2.66406H3.33333C2.59695 2.66406 2 3.26102 2 3.9974V13.3307C2 14.0671 2.59695 14.6641 3.33333 14.6641H12.6667C13.403 14.6641 14 14.0671 14 13.3307V3.9974C14 3.26102 13.403 2.66406 12.6667 2.66406Z"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 6.66406H14"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">All day Event</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" checked="" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Time Zone -->
+      <div class="mt-4 relative">
+        <label for="end-time" class="block text-sm font-medium text-primary">
+          Time Zone
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="UTC- 05:00 Eastern Time"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none uppercase"
+          />
+        </div>
+      </div>
+
+      <!-- Repeat Event -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.332 1.33594L13.9987 4.0026L11.332 6.66927"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 7.33333V6.66667C2 5.95942 2.28095 5.28115 2.78105 4.78105C3.28115 4.28095 3.95942 4 4.66667 4H14"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.66667 14.6693L2 12.0026L4.66667 9.33594"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14 8.66406V9.33073C14 10.038 13.719 10.7162 13.219 11.2163C12.7189 11.7164 12.0406 11.9974 11.3333 11.9974H2"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">Repeat Event</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" checked="" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- participents  -->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div>
+          <svg
+            class="fill-[#F3E8FF] dark:fill-[#1F2228]"
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M33.333 0C37.0149 0 40 2.98509 40 6.66699V33.333C40 37.0149 37.0149 40 33.333 40H6.66699C2.98509 40 0 37.0149 0 33.333V6.66699C0 2.98509 2.98509 0 6.66699 0H33.333Z"
+            ></path>
+            <path
+              d="M33.333 0C37.0149 0 40 2.98509 40 6.66699V33.333C40 37.0149 37.0149 40 33.333 40H6.66699C2.98509 40 0 37.0149 0 33.333V6.66699C0 2.98509 2.98509 0 6.66699 0H33.333Z"
+            ></path>
+            <g clip-path="url(#clip0_325_58134)">
+              <path
+                d="M16.6198 12.4936C16.9421 12.7833 16.9681 13.2749 16.6784 13.5971L14.3346 16.2013C14.1914 16.3608 13.9896 16.4552 13.7747 16.4585C13.5599 16.4617 13.3548 16.3803 13.2018 16.2306L11.8965 14.9285C11.5937 14.6225 11.5937 14.1277 11.8965 13.8217C12.1992 13.5157 12.6973 13.5157 13 13.8217L13.7194 14.5411L15.513 12.5489C15.8027 12.2267 16.2943 12.2006 16.6165 12.4904L16.6198 12.4936ZM16.6198 17.7019C16.9421 17.9917 16.9681 18.4832 16.6784 18.8055L14.3346 21.4096C14.1914 21.5691 13.9896 21.6635 13.7747 21.6668C13.5599 21.67 13.3548 21.5887 13.2018 21.4389L11.8965 20.1368C11.5905 19.8308 11.5905 19.3361 11.8965 19.0333C12.2025 18.7306 12.6973 18.7273 13 19.0333L13.7194 19.7527L15.513 17.7605C15.8027 17.4383 16.2943 17.4122 16.6165 17.7019H16.6198ZM18.9603 14.3751C18.9603 13.7989 19.4258 13.3335 20.002 13.3335H27.2936C27.8698 13.3335 28.3353 13.7989 28.3353 14.3751C28.3353 14.9513 27.8698 15.4168 27.2936 15.4168H20.002C19.4258 15.4168 18.9603 14.9513 18.9603 14.3751ZM18.9603 19.5835C18.9603 19.0073 19.4258 18.5418 20.002 18.5418H27.2936C27.8698 18.5418 28.3353 19.0073 28.3353 19.5835C28.3353 20.1596 27.8698 20.6251 27.2936 20.6251H20.002C19.4258 20.6251 18.9603 20.1596 18.9603 19.5835ZM16.877 24.7918C16.877 24.2156 17.3424 23.7501 17.9186 23.7501H27.2936C27.8698 23.7501 28.3353 24.2156 28.3353 24.7918C28.3353 25.368 27.8698 25.8335 27.2936 25.8335H17.9186C17.3424 25.8335 16.877 25.368 16.877 24.7918ZM13.2311 23.2293C13.6455 23.2293 14.0429 23.3939 14.336 23.6869C14.629 23.98 14.7936 24.3774 14.7936 24.7918C14.7936 25.2062 14.629 25.6036 14.336 25.8966C14.0429 26.1897 13.6455 26.3543 13.2311 26.3543C12.8167 26.3543 12.4193 26.1897 12.1263 25.8966C11.8332 25.6036 11.6686 25.2062 11.6686 24.7918C11.6686 24.3774 11.8332 23.98 12.1263 23.6869C12.4193 23.3939 12.8167 23.2293 13.2311 23.2293Z"
+                fill="#A855F7"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_325_58134">
+                <path
+                  d="M11.667 11.25H28.3337V27.9167H11.667V11.25Z"
+                  fill="white"
+                ></path>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">Participents</p>
+          <p class="text-base text-gray-400">Manage event attendees</p>
+        </div>
+      </div>
+
+      <!-- Organizers -->
+      <div class="mt-4 relative teamAsse-dropdown">
+        <label for="organizer" class="text-sm font-medium text-primary">
+          Organizer <span class="text-red-500">*</span>
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="organizer"
+            readonly=""
+            placeholder="Select responsible member from here"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none teamAsse-dropdown-input"
+          />
+
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 teamAsse-dropdown-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            style="transform: rotate(0deg)"
+          >
+            <path
+              d="M5 7l4 4 4-4"
+              stroke="#9CA3AF"
+              stroke-width="2"
+              fill="none"
+            ></path>
+          </svg>
+
+          <ul
+            class="mt-1 absolute z-10 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl teamAsse-dropdown-list"
+            style="opacity: 0"
+          >
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              UX research
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              UI Design
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              User Testing
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              Prototyping
+            </li>
+          </ul>
+
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+
+        <!-- Selected items -->
+        <div class="mt-2 selected-items flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- Attendees -->
+      <div class="mt-4 relative teamAsse-dropdown">
+        <label for="attendees" class="text-sm font-medium text-primary">
+          Attendees <span class="text-red-500">*</span>
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="attandees"
+            readonly=""
+            placeholder="Select roles from here"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none teamAsse-dropdown-input"
+          />
+
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 teamAsse-dropdown-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            style="transform: rotate(0deg)"
+          >
+            <path
+              d="M5 7l4 4 4-4"
+              stroke="#9CA3AF"
+              stroke-width="2"
+              fill="none"
+            ></path>
+          </svg>
+
+          <ul
+            class="mt-1 absolute z-10 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl teamAsse-dropdown-list"
+            style="opacity: 0"
+          >
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              UX research
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              UI Design
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              User Testing
+            </li>
+            <li
+              class="px-4 py-2 cursor-pointer hover:bg-blue-50 teamAsse-dropdown-item"
+            >
+              Prototyping
+            </li>
+          </ul>
+
+          <span
+            class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+          ></span>
+        </div>
+
+        <!-- Selected items -->
+        <div class="mt-2 selected-items flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- Send Invites -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.332 2.66406H2.66536C1.92898 2.66406 1.33203 3.26102 1.33203 3.9974V11.9974C1.33203 12.7338 1.92898 13.3307 2.66536 13.3307H13.332C14.0684 13.3307 14.6654 12.7338 14.6654 11.9974V3.9974C14.6654 3.26102 14.0684 2.66406 13.332 2.66406Z"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.6654 4.66406L8.68536 8.46406C8.47955 8.59301 8.24158 8.6614 7.9987 8.6614C7.75582 8.6614 7.51785 8.59301 7.31203 8.46406L1.33203 4.66406"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">Repeat Event</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" checked="" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- location and links  -->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div class="p-2 rounded-lg bg-svg-blue">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.6654 8.33073C16.6654 12.4916 12.0495 16.8249 10.4995 18.1632C10.3551 18.2718 10.1794 18.3305 9.9987 18.3305C9.81803 18.3305 9.64226 18.2718 9.49786 18.1632C7.94786 16.8249 3.33203 12.4916 3.33203 8.33073C3.33203 6.56262 4.03441 4.86693 5.28465 3.61668C6.5349 2.36644 8.23059 1.66406 9.9987 1.66406C11.7668 1.66406 13.4625 2.36644 14.7127 3.61668C15.963 4.86693 16.6654 6.56262 16.6654 8.33073Z"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 10.8359C11.3807 10.8359 12.5 9.71665 12.5 8.33594C12.5 6.95523 11.3807 5.83594 10 5.83594C8.61929 5.83594 7.5 6.95523 7.5 8.33594C7.5 9.71665 8.61929 10.8359 10 10.8359Z"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">Location & Links</p>
+          <p class="text-base text-gray-400">
+            Event location and meeting details
+          </p>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="mt-4 relative">
+        <label for="location" class="text-sm font-medium text-primary"
+          >Location
+          <span class="text-red-500">*</span>
+        </label>
+
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter location or address"
+          class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none"
+          autocomplete="off"
+        />
+
+        <span
+          class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+        ></span>
+      </div>
+
+      <!-- Meeting Link -->
+      <div class="mt-4 relative">
+        <label for="meetingLink" class="text-sm font-medium text-primary"
+          >Meeting Link
+          <span class="text-red-500">*</span>
+        </label>
+
+        <input
+          type="text"
+          name="meetingLink"
+          placeholder="Enter zoom link here"
+          class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none"
+          autocomplete="off"
+        />
+
+        <span
+          class="error-msg absolute left-0 top-full mt-1 text-xs text-red-500 min-h-4"
+        ></span>
+      </div>
+
+      <!-- Add to Calender -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33203 1.33594V4.0026"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.668 1.33594V4.0026"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.6667 2.66406H3.33333C2.59695 2.66406 2 3.26102 2 3.9974V13.3307C2 14.0671 2.59695 14.6641 3.33333 14.6641H12.6667C13.403 14.6641 14 14.0671 14 13.3307V3.9974C14 3.26102 13.403 2.66406 12.6667 2.66406Z"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 6.66406H14"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">All day Event</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" checked="" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attachemnts  -->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div>
+          <svg
+            class="fill-[#F3E8FF] dark:fill-[#1F2228]"
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M33.333 0C37.0149 0 40 2.98509 40 6.66699V33.333C40 37.0149 37.0149 40 33.333 40H6.66699C2.98509 40 0 37.0149 0 33.333V6.66699C0 2.98509 2.98509 0 6.66699 0H33.333Z"
+            ></path>
+            <path
+              d="M33.333 0C37.0149 0 40 2.98509 40 6.66699V33.333C40 37.0149 37.0149 40 33.333 40H6.66699C2.98509 40 0 37.0149 0 33.333V6.66699C0 2.98509 2.98509 0 6.66699 0H33.333Z"
+            ></path>
+            <g clip-path="url(#clip0_325_58134)">
+              <path
+                d="M16.6198 12.4936C16.9421 12.7833 16.9681 13.2749 16.6784 13.5971L14.3346 16.2013C14.1914 16.3608 13.9896 16.4552 13.7747 16.4585C13.5599 16.4617 13.3548 16.3803 13.2018 16.2306L11.8965 14.9285C11.5937 14.6225 11.5937 14.1277 11.8965 13.8217C12.1992 13.5157 12.6973 13.5157 13 13.8217L13.7194 14.5411L15.513 12.5489C15.8027 12.2267 16.2943 12.2006 16.6165 12.4904L16.6198 12.4936ZM16.6198 17.7019C16.9421 17.9917 16.9681 18.4832 16.6784 18.8055L14.3346 21.4096C14.1914 21.5691 13.9896 21.6635 13.7747 21.6668C13.5599 21.67 13.3548 21.5887 13.2018 21.4389L11.8965 20.1368C11.5905 19.8308 11.5905 19.3361 11.8965 19.0333C12.2025 18.7306 12.6973 18.7273 13 19.0333L13.7194 19.7527L15.513 17.7605C15.8027 17.4383 16.2943 17.4122 16.6165 17.7019H16.6198ZM18.9603 14.3751C18.9603 13.7989 19.4258 13.3335 20.002 13.3335H27.2936C27.8698 13.3335 28.3353 13.7989 28.3353 14.3751C28.3353 14.9513 27.8698 15.4168 27.2936 15.4168H20.002C19.4258 15.4168 18.9603 14.9513 18.9603 14.3751ZM18.9603 19.5835C18.9603 19.0073 19.4258 18.5418 20.002 18.5418H27.2936C27.8698 18.5418 28.3353 19.0073 28.3353 19.5835C28.3353 20.1596 27.8698 20.6251 27.2936 20.6251H20.002C19.4258 20.6251 18.9603 20.1596 18.9603 19.5835ZM16.877 24.7918C16.877 24.2156 17.3424 23.7501 17.9186 23.7501H27.2936C27.8698 23.7501 28.3353 24.2156 28.3353 24.7918C28.3353 25.368 27.8698 25.8335 27.2936 25.8335H17.9186C17.3424 25.8335 16.877 25.368 16.877 24.7918ZM13.2311 23.2293C13.6455 23.2293 14.0429 23.3939 14.336 23.6869C14.629 23.98 14.7936 24.3774 14.7936 24.7918C14.7936 25.2062 14.629 25.6036 14.336 25.8966C14.0429 26.1897 13.6455 26.3543 13.2311 26.3543C12.8167 26.3543 12.4193 26.1897 12.1263 25.8966C11.8332 25.6036 11.6686 25.2062 11.6686 24.7918C11.6686 24.3774 11.8332 23.98 12.1263 23.6869C12.4193 23.3939 12.8167 23.2293 13.2311 23.2293Z"
+                fill="#A855F7"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_325_58134">
+                <path
+                  d="M11.667 11.25H28.3337V27.9167H11.667V11.25Z"
+                  fill="white"
+                ></path>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">Attachements</p>
+          <p class="text-base text-gray-400">Add files and documents</p>
+        </div>
+      </div>
+
+      <!-- <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary"> -->
+      <!-- <h3 class="text-lg font-semibold mb-4 text-primary">Attachments</h3> -->
+
+      <!-- Upload Area -->
+      <div
+        id="dropArea"
+        class="mt-4 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center"
+      >
+        <div class="flex flex-col items-center gap-2 text-gray-500">
+          <svg
+            width="42"
+            height="30"
+            viewBox="0 0 42 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.32782 29.0199C4.17809 29.0199 0 24.8418 0 19.6921C0 15.6241 2.60402 12.165 6.2315 10.8889C6.22502 10.714 6.21855 10.5391 6.21855 10.3642C6.21855 4.638 10.8565 0 16.5828 0C20.424 0 23.773 2.0858 25.5673 5.19508C26.5519 4.53436 27.7438 4.1457 29.0199 4.1457C32.453 4.1457 35.2384 6.93109 35.2384 10.3642C35.2384 11.1545 35.0894 11.9059 34.8239 12.6055C38.6068 13.3699 41.457 16.7188 41.457 20.7285C41.457 25.3082 37.7453 29.0199 33.1656 29.0199H9.32782ZM14.4452 14.9634C13.8363 15.5723 13.8363 16.5569 14.4452 17.1593C15.0541 17.7617 16.0387 17.7682 16.6411 17.1593L19.1674 14.633V23.3196C19.1674 24.1811 19.8605 24.8742 20.722 24.8742C21.5835 24.8742 22.2766 24.1811 22.2766 23.3196V14.633L24.8029 17.1593C25.4118 17.7682 26.3964 17.7682 26.9989 17.1593C27.6013 16.5504 27.6078 15.5658 26.9989 14.9634L21.8167 9.78126C21.2078 9.17236 20.2232 9.17236 19.6208 9.78126L14.4387 14.9634H14.4452Z"
+              fill="#9CA3AF"
+            ></path>
+          </svg>
+
+          <p class="text-xs">Drag &amp; drop files here</p>
+          <span class="text-xs">or</span>
+
+          <button
+            type="button"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm cursor-pointer"
+            id="browseBtn"
+          >
+            Browse Files
+          </button>
+
+          <input type="file" id="fileInput" class="hidden" multiple="" />
+        </div>
+      </div>
+
+      <!-- File List -->
+      <div id="fileList" class="mt-4 space-y-2 max-h-40 overflow-y-auto"></div>
+      <!-- </div> -->
+    </div>
+
+    <!-- Reminders & Notification -->
+    <div
+      class="p-6 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+    >
+      <div class="flex items-center gap-3 rounded-lg">
+        <!-- svg  -->
+        <div class="p-2 rounded-lg bg-svg-blue">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.55664 17.5C8.70293 17.7533 8.91332 17.9637 9.16668 18.11C9.42003 18.2563 9.70743 18.3333 9.99997 18.3333C10.2925 18.3333 10.5799 18.2563 10.8333 18.11C11.0866 17.9637 11.297 17.7533 11.4433 17.5"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2.71772 12.7691C2.60886 12.8884 2.53702 13.0368 2.51094 13.1962C2.48486 13.3556 2.50566 13.5191 2.57081 13.6669C2.63597 13.8147 2.74267 13.9404 2.87794 14.0286C3.0132 14.1169 3.17121 14.1639 3.33272 14.1641H16.6661C16.8276 14.1641 16.9856 14.1172 17.1209 14.0292C17.2563 13.9411 17.3631 13.8155 17.4285 13.6678C17.4938 13.5201 17.5148 13.3566 17.4889 13.1972C17.4631 13.0378 17.3914 12.8893 17.2827 12.7699C16.1744 11.6274 14.9994 10.4132 14.9994 6.66406C14.9994 5.33798 14.4726 4.06621 13.5349 3.12853C12.5972 2.19085 11.3255 1.66406 9.99939 1.66406C8.67331 1.66406 7.40154 2.19085 6.46386 3.12853C5.52618 4.06621 4.99939 5.33798 4.99939 6.66406C4.99939 10.4132 3.82356 11.6274 2.71772 12.7691Z"
+              stroke="#3B82F6"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <!-- Text Content -->
+        <div class="flex flex-col">
+          <p class="text-lg font-semibold text-primary">
+            Reminders & Notifications
+          </p>
+          <p class="text-base text-gray-400">Set up event reminders</p>
+        </div>
+      </div>
+
+      <!-- Add Reminder Time -->
+      <div class="mt-4 relative eventDropdown">
+        <label for="reminderTime" class="text-sm font-medium text-primary">
+          Add Reminder Time
+        </label>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="reminderTime"
+            readonly
+            placeholder="15 minute before"
+            class="p-3 w-full cursor-pointer rounded-lg bg-primary text-primary border border-primary text-sm focus:outline-none eventDropdown-input"
+          />
+
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transition-transform duration-300 eventDropdown-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M5 7l4 4 4-4"
+              stroke="#9CA3AF"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+
+          <ul
+            class="absolute z-10 mt-1 w-full rounded-lg border border-primary bg-white dark:bg-[#0d0d0d] text-primary text-sm overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out shadow-2xl eventDropdown-list"
+          >
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              30 minute before
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              45 minute before
+            </li>
+            <li
+              class="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-blue-50 hover:text-blue-500 eventDropdown-item"
+            >
+              1 hour after
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- In App Notification -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.332 2.66406H2.66536C1.92898 2.66406 1.33203 3.26102 1.33203 3.9974V11.9974C1.33203 12.7338 1.92898 13.3307 2.66536 13.3307H13.332C14.0684 13.3307 14.6654 12.7338 14.6654 11.9974V3.9974C14.6654 3.26102 14.0684 2.66406 13.332 2.66406Z"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.6654 4.66406L8.68536 8.46406C8.47955 8.59301 8.24158 8.6614 7.9987 8.6614C7.75582 8.6614 7.51785 8.59301 7.31203 8.46406L1.33203 4.66406"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">In-App notification</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- In-App Notification -->
+      <div class="px-4 py-3 mt-5 rounded-lg border border-primary bg-primary">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.332 1.33594H4.66536C3.92898 1.33594 3.33203 1.93289 3.33203 2.66927V13.3359C3.33203 14.0723 3.92898 14.6693 4.66536 14.6693H11.332C12.0684 14.6693 12.6654 14.0723 12.6654 13.3359V2.66927C12.6654 1.93289 12.0684 1.33594 11.332 1.33594Z"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8 12H8.00667"
+                stroke="#3B82F6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <p class="text-sm text-gray-500">In-App notification</p>
+          </div>
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
+            ></div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Footer -->
+<div
+  class="mt-5 bg-white dark:bg-[#0D0D0D] border border-primary rounded-xl shadow-sm"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+  >
+    <!-- Info -->
+    <div class="flex items-center gap-2 text-sm text-gray-500 w-full sm:w-auto">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 14C8.85652 14 10.637 13.2625 11.9497 11.9497C13.2625 10.637 14 8.85652 14 7C14 5.14348 13.2625 3.36301 11.9497 2.05025C10.637 0.737498 8.85652 0 7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 8.85652 0.737498 10.637 2.05025 11.9497C3.36301 13.2625 5.14348 14 7 14ZM5.90625 9.1875H6.5625V7.4375H5.90625C5.54258 7.4375 5.25 7.14492 5.25 6.78125C5.25 6.41758 5.54258 6.125 5.90625 6.125H7.21875C7.58242 6.125 7.875 6.41758 7.875 6.78125V9.1875H8.09375C8.45742 9.1875 8.75 9.48008 8.75 9.84375C8.75 10.2074 8.45742 10.5 8.09375 10.5H5.90625C5.54258 10.5 5.25 10.2074 5.25 9.84375C5.25 9.48008 5.54258 9.1875 5.90625 9.1875ZM7 3.5C7.23206 3.5 7.45462 3.59219 7.61872 3.75628C7.78281 3.92038 7.875 4.14294 7.875 4.375C7.875 4.60706 7.78281 4.82962 7.61872 4.99372C7.45462 5.15781 7.23206 5.25 7 5.25C6.76794 5.25 6.54538 5.15781 6.38128 4.99372C6.21719 4.82962 6.125 4.60706 6.125 4.375C6.125 4.14294 6.21719 3.92038 6.38128 3.75628C6.54538 3.59219 6.76794 3.5 7 3.5Z"
+          fill="#4B5563"
+        />
+      </svg>
+      <span>Invitation email will be sent automatically upon saving</span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-3">
+      <!-- Draft Button -->
+      <button
+        type="button"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-[#5392F7] text-[#5392F7] font-medium cursor-pointer"
+      >
+        <svg
+          width="11"
+          height="16"
+          viewBox="0 0 11 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.75 3.23487C0.75 2.36516 0.75 1.93031 0.919282 1.59796C1.06817 1.30575 1.30575 1.06817 1.59796 0.919282C1.93031 0.75 2.36516 0.75 3.23487 0.75H7.58339C8.45309 0.75 8.88795 0.75 9.2203 0.919282C9.51251 1.06817 9.75008 1.30575 9.89898 1.59796C10.0683 1.93031 10.0683 2.36516 10.0683 3.23487V13.5665C10.0683 13.9439 10.0683 14.1326 9.98983 14.2358C9.95594 14.2808 9.91269 14.3178 9.86308 14.3443C9.81347 14.3709 9.75869 14.3863 9.70252 14.3896C9.57284 14.3974 9.41598 14.2925 9.10227 14.0836L5.40913 11.6213L1.71599 14.0829C1.40228 14.2925 1.24542 14.3974 1.11496 14.3896C1.05893 14.3862 1.00429 14.3707 0.954825 14.3442C0.905357 14.3176 0.862234 14.2807 0.828429 14.2358C0.75 14.1326 0.75 13.9439 0.75 13.5665V3.23487Z"
+            fill="#3B82F6"
+            stroke="#3B82F6"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        Save as Draft
+      </button>
+
+      <!-- Cancel Button -->
+      <button
+        type="button"
+        class="px-5 py-3 rounded-lg border border-[#9CA3AF] text-[#9CA3AF] font-medium cursor-pointer"
+      >
+        Cancel
+      </button>
+
+      <!-- Save Changes Button -->
+      <button
+        type="submit"
+        form="eventForm"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#5392F7] text-white dark:text-black font-medium cursor-pointer"
+      >
+        <svg
+          class="fill-[#F3E8FF] dark:fill-[#021B3D]"
+          width="13"
+          height="13"
+          viewBox="0 0 13 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 2.88889V11.5556C13 11.9528 12.8587 12.2929 12.5761 12.5761C12.2934 12.8592 11.9533 13.0005 11.5556 13H1.44444C1.04722 13 0.707296 12.8587 0.424667 12.5761C0.142037 12.2934 0.000481481 11.9533 0 11.5556V1.44444C0 1.04722 0.141556 0.707296 0.424667 0.424667C0.707778 0.142037 1.0477 0.000481481 1.44444 0H10.1111L13 2.88889ZM6.5 10.8333C7.10185 10.8333 7.61343 10.6227 8.03472 10.2014C8.45602 9.78009 8.66667 9.26852 8.66667 8.66667C8.66667 8.06481 8.45602 7.55324 8.03472 7.13194C7.61343 6.71065 7.10185 6.5 6.5 6.5C5.89815 6.5 5.38657 6.71065 4.96528 7.13194C4.54398 7.55324 4.33333 8.06481 4.33333 8.66667C4.33333 9.26852 4.54398 9.78009 4.96528 10.2014C5.38657 10.6227 5.89815 10.8333 6.5 10.8333ZM2.16667 5.05555H8.66667V2.16667H2.16667V5.05555Z"
+          />
+        </svg>
+
+        Save Changes
+      </button>
+    </div>
+  </div>
+</div>
